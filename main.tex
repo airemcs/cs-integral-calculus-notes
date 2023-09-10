@@ -3,6 +3,10 @@
 \usepackage{xcolor, color, soul}
 \usepackage{amssymb}
 \usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
 
 \sethlcolor{yellow}
 
@@ -12,6 +16,19 @@
 \newcommand{\notes}{A.L. Maagma}
 \newcommand{\follow}{\bigskip\noindent}
 \newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\minus}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
 
 % ---------------- Start Document ----------------
 
@@ -32,133 +49,317 @@
 
 \section{The Differentials}
 
+\enclose{
     \textbf{DEFINITION.}
-    These provide us with a way of \hl{estimating the amount a function changes as a result of a small change in input values}. 
-    The equation \[\triangle{y} \approx dy\] can and will only be considered if \(\triangle{x}\) is ``close enough''.
-    The approximation of the equation becomes better as \(\triangle{x}\) becomes smaller.
-
+    These provide us with a way of \hl{estimating the amount a function changes as a result of a small change in input values}.
+    The equation \block{\triangle{y} \approx{} dy} can and will only be considered if \inline{\triangle{x}} is ``close enough''.
+    The approximation of the equation becomes better as \inline{\triangle{x}} becomes smaller.
+    
     \follow\textbf{NOTE.}
-    We equate \(\triangle{x} = dx\).
+    We equate \inline{\triangle{x} = dx}.
+}
 
 \subsection{The Differential of the Independent Variable}
 
-    \textbf{DEFINITION.}
-    If the function \textit{f} is defined by the equation \(y = f(x)\), then the \hl{differential of y}, denoted by \(dy\), is given by \[dy = f'(x)dx \longrightarrow f'(x) = \frac{dy}{dx}\] where \textit{x} is any number in the domain of \textit{f'} and \(\triangle{x}\) is an arbitrary increment of \textit{x}.
+    \enclose{
+        \textbf{DEFINITION.}
+        If the function \textit{f} is definited by the equation \inline{y = f (x)}, then the \hl{differential of y}, denoted by \textit{dy}, is given by \block{dy = f' (x) \, dx \longrightarrow{} f' (x) = \frac{dy}{dx}} where \textit{x} is any number in the domain of \textit{f'} and \inline{\triangle{x}} is an arbitrary increment of \textit{x}.
+    }
 
-    \follow\textbf{EXAMPLE 1.1.}
-    Find \(dy\) for \(y = {(x^3 + 5x - 1)}^{2023}\).
-    \[f'(x) = 2023{(x^3 + 5x - 1)}^{2022}(3x^2 + 5)\]
-    \[\therefore dy = 2023(x^3 + 5x - 1)(3x^2 + 5)dx\]
+    \follow\textbf{EXAMPLE 1.1.1.}
+    Find \textit{dy} for \inline{y = (x^3 + 5x \minus{} 1)^{2023}}.
+    \block{f' (x) = 2023 (x^3 + 5x \minus{} 1)^{2022} (3x^2 + 5)}
+    \block{\therefore{} dy = 2023(x^3 + 5x \minus{} 1) (3x^2 + 5x) \, dx}
 
-    \follow\textbf{EXAMPLE 1.2.}
-    Find the differential \(dy\) of the function \(y = 4x^2 + x + 3\).
-    \[(8x + 1)dx\]
+    \follow\textbf{EXAMPLE 1.1.2.}
+    Find the differential \textit{dy} of the function \inline{y = 4x^2 + x + 3}.
+    \block{(8x + 1) \, dx}
 
-    \follow\textbf{EXAMPLE 1.3.}
-    Find the differential \(dy\) of the function \(y = \cos(x)\).
-    \[dy = -\sin(x)dx\]
+    \follow\textbf{EXAMPLE 1.1.3.}
+    Find the differential \textit{dy} of the function \inline{y = \cos(x)}.
+    \block{dy = \minus{} \sin(x) \, dx}
 
-    \newpage\follow\textbf{EXAMPLE 1.4.}
-    Compare the values of \(\triangle{y}\) and \(dy\) if \(y = f(x) = x^3 + x^2 - 2x + 1\) and \(x\) changes (a) from 2 to 2.05 and (b) from 2 to 2.01.
-    \[x = 2 \spaces x + \triangle{x} = 2.05\]
-    \[\Rightarrow \triangle{x} = 0.05 = dx\]
+    \newpage\follow\textbf{NOTE.}
+    The following figures represent the corresponding derivatives of trigonometric identities or functions.
+    
+    % TODO: Center Table
+    \follow\begin{tabular}{ccc}
+        \toprule \inline{f (x)} && \inline{f' (x)} \\
+        \midrule \inline{\sin(x)} && \inline{\cos(x)} \\ 
+        \midrule \inline{\cos(x)} && \inline{\minus{} \sin(x)} \\
+        \midrule \inline{\tan(x)} && \inline{\sec^2 (x)} \\
+        \midrule \inline{\cot(x)} && \inline{\minus{} \csc^2 (x)} \\
+        \midrule \inline{\sec(x)} && \inline{\sec(x) \tan(x)} \\
+        \midrule \inline{\csc(x)} && \inline{\minus{} \csc(x) \cot(x)} \\
+    \bottomrule\end{tabular}
 
-    \[\triangle{y} = f(x + \triangle{x}) - f(x)\]
-    \[= f(2.05) - f(2)\]
-    \[= [{(2.05)}^3 + {(2.05)}^2 + 2(2.05) + 1] - [2^3 + 2^2 - 2.2 + 1]\]
-    \[\triangle{y} = 0.7176\]
-
-    \[dy = f'(x)dx\]
-    \[= (3x^2 + 2x - 2)dx\]
-    \[= (3.2^2 + 2.2 - 2)(0.05)\]
-    \[dy = 0.7\]
+    \follow\textbf{EXAMPLE 1.1.4.}
+    Compare the values of \inline{\triangle{y}} and \textit{dy} if \inline{y = f (x) = x^3 + x^2 \minus{} 2x + 1} and \textit{x} changes (a) from 2 to 2.05 and (b) from 2 to 2.01.
+    
+    \begin{align*}
+        x &= 2                  & \triangle{y} &= f(x + \triangle{x}) - f(x)& dy &= f'(x) \, dx \\
+        x + \triangle{x} &= 2.05& &= f(2.05) - f(2)                         & &= (3x^2 + 2x \minus 2) \, dx \\
+        \triangle{x} &= 0.05    & &= 0.7176                                 & &= (3{(2)}^2 + 2(2) \minus 2)(0.05) \\
+        dx &= 0.05              &&                                          & &= 0.7
+    \end{align*}
 
     \follow\textbf{NOTE.}
-    The final equation utilized our solution at \(x = 2, \triangle{x} = dx = 0.05\).
-    Observe that the approximation of \(\triangle{y} \approx dy\) becomes better as \(\triangle{x}\) becomes smaller.
+    The final equation utilized our solution at \inline{x = 2}, \inline{\triangle{x} = dx = 0.05}.
+    Observe the approximation of \inline{\triangle{y} \approx{} dy} becomes better as \inline{\triangle{x}} becomes smaller.
 
 \newpage\subsection*{Practice Exercises}
 
     \begin{enumerate}
+        \item Find \textit{dy} and \inline{\triangle{y}} for the given values of \textit{x} and \inline{\triangle{x}}.
+        \numbers{
+            \item \inline{y = x^2}, \inline{x = 2}, and \inline{\triangle{x} = 0.5}
+            \item \inline{y = x^3}, \inline{x = 2}, and \inline{\triangle{x} = 0.5}
+            \item \inline{y = \sqrt[3]{x}}, \inline{x = 8}, and \inline{\triangle{x} = 1}
+            \item \inline{ y = \sqrt{x}}, \inline{x = 4}, and \inline{\triangle{x} = 1}
+        }
         
-        \item Find \(dy\) and \(\triangle{y}\) for the given values of \(x\) and \(\triangle{x}\).
-        \begin{enumerate}[label*=\arabic*.]
-            \item \(y = x^2\), \(x = 2\), and \(\triangle{x} = 0.5\)
-            \item \(y = x^3\), \(x = 2\), and \(\triangle{x} = 0.5\)
-            \item \(y = \sqrt[3]{x}\), \(x = 8\), and \(\triangle{x} = 1\)
-            \item \(y = \sqrt[]{x}\), \(x = 4\), and \(\triangle{x} = 1\)
-        \end{enumerate}
+        \item Find (a) \inline{\triangle{y}}, (b) \textit{dy}, (c) \inline{\triangle{y} \minus{} dy}.
+        \numbers{
+            \item \inline{y = x^2 \minus{} 3x}, \inline{x = 2}, and \inline{\triangle{x} = 0.03}
+            \item \inline{y = x^2 \minus{} 3x}, \inline{x = \minus{} 1}, and \inline{\triangle{x} = 0.02}
+            \item \inline{y = \frac{1}{x}}, \inline{x = \minus{} 2}, and \inline{\triangle{x} = \minus{} 0.1}
+            \item \inline{y = \frac{1}{x}}, \inline{x = 3}, and \inline{\triangle{x} = \minus{} 0.2}
+            \item \inline{y = x^3 + 1}, \inline{x = 1}, and \inline{\triangle{x} = \minus{} 0.5}
+            \item \inline{y = x^3 + 1}, \inline{x = \minus{} 1}, and \inline{\triangle{x} = 0.1}
+        }
 
-        \item Find (a) \(\triangle{y}\); (b) \(dy\); (c) \(\triangle{y} - dy\).
-        \begin{enumerate}[label*=\arabic*.]
-            \item \(y = x^2 - 3x\), \(x = 2\), and \(\triangle{x} = 0.03\)
-            \item \(y = x^2 - 3x\), \(x = -1\), and \(\triangle{x} = 0.02\)
-            \item \(y = \frac{1}{x}\), \(x = -2\), and \(\triangle{x} = -0.1\)
-            \item \(y = \frac{1}{x}\), \(x = 3\), and \(\triangle{x} = -0.2\)
-            \item \(y = x^3 + 1\), \(x = 1\), and \(\triangle{x} = -0.5\)
-            \item \(y = x^3 + 1\), \(x = -1\), and \(\triangle{x} = 0.1\)
-        \end{enumerate}
-
-        \item Find \(dy\).
-        \begin{enumerate}[label*=\arabic*.]
-            \item \(y = {(3x^2 - 2x + 1)}^3\)
-            \item \(y = \frac{3x}{x^2 + 2}\)
-            \item \(y = x^2\sqrt[]{2x + 3}\)
-            \item \(y = \sqrt[]{4 - x^2}\)
-            \item \(y = \frac{2 + \cos{x}}{2 - \sin{x}}\)
-            \item \(y = \tan^2{x} \sec^2{x}\)
-        \end{enumerate}
+        \item Find \inline{dy}.
+        \numbers{
+            \item \inline{y = {(3x^2 \minus{} 2x + 1)}^3}
+            \item \inline{y = \frac{3x}{x^2 + 2}}
+            \item \inline{y = x^2 \, \sqrt{2x + 3}}
+            \item \inline{y = \sqrt{4 \minus{} x^2}}
+            \item \inline{y = \frac{2 + \cos(x)}{2 \minus{} \sin(x)}}
+            \item \inline{y = \tan^2(x) \sec^2(x)}
+        }
 
         \item Solve the following problems.
-        \begin{enumerate}[label*=\arabic*.]
+        \numbers{
             \item The measurement of an edge of a cube is found to be 15 cm with a possible error of 0.01 cm. Use differentials to find the approximate error in computing from this measurement: (a) the volume; (b) the area of one of the faces.
             \item An open cylindrical tank is to have an outside coating of thickness 2 cm. If the inner radius is 6 m and the altitude is 10 m, find by differentials the approximate amount of coating material to be used.
             \item A burn on a person's skin is in the shape of a circle. Use differentials to find the approximate decrease in the area of the burn when the radius decreases from 1 cm to 0.8 cm.
             \item A tumor in a person's body is spherical in shape. Use differentials to find the approximate increase in the volume of the tumor when the radius increases from 1.5 cm to 1.6 cm.
-        \end{enumerate}
-
+        }
     \end{enumerate}
 
 \newpage\subsection*{Answer Key}
 
-    \begin{enumerate}
+\begin{enumerate}
+    \item Find \textit{dy} and \inline{\triangle{y}} for the given values of \textit{x} and \inline{\triangle{x}}.
+    \numbers{
+        \item \inline{dy = 2}, \inline{\triangle{y} = 2.25}
+        \item \inline{dy = 6}, \inline{\triangle{y} = 7.625}
+        \item \inline{dy = \frac{1}{12} \approx{} 0.083}, \inline{\triangle{y} = \sqrt[3]{9} \minus{} 2 \approx{} 0.080}
+        \item \inline{dy = 0.25}, \inline{\triangle{y} = \sqrt{5} \minus{} \sqrt{4} \approx{} 0.236}
+    }
+    
+    \item Find (a) \inline{\triangle{y}}, (b) \textit{dy}, (c) \inline{\triangle{y} \minus{} dy}.
+    \numbers{
+        \item (a) 0.0309, (b) 0.03, (c) 0.0009
+        \item (a) -0.0996, (b) -0.1, (c) 0.0004
+        \item (a) \inline{\frac{1}{42} \approx{} 0.0238}, (b) \inline{\frac{1}{40} = 0.025}, (c) \inline{\minus{} \frac{1}{840} \approx{} \minus{} 0.0012}
+        \item (a) \inline{\frac{1}{42} \approx{} 0.0238}, (b) \inline{\frac{1}{45} = 0.022}, (c) \inline{\frac{1}{630} \approx{} \minus{} 0.0016}
+        \item (a) \inline{\minus{} 0.875}, (b) \inline{\minus{} 1.5}, (c) 0.625
+        \item (a) 0.271, (b) 0.3, (c) \inline{\minus{} 0.029}
+    }
+
+    \item Find \inline{dy}.
+    \numbers{
+        \item \inline{dy = 3{(3x^2 \minus{} 2x + 1)}^2{(6x \minus{} 2)} \, dx}
+        \item \inline{dy = \frac{3(2 \minus{} x^2)}{{(x^2 + 2)}^2} \, dx}
+        \item \inline{dy = \frac{x (5x + 6)}{({2x + 3})^{1/2}} \, dx}
+        \item \inline{dy = \frac{\minus{} x}{\sqrt{4 \minus{} x^2}} \, dx}
+        \item \inline{dy = \frac{1 \minus{} 2 \sin(x) + 2 \cos(x)}{{(2 \minus{} \sin(x))}^2} \, dx}
+        \item \inline{dy = 2 \tan(x) \sec^2(x) x (2\tan^2(x) + 1) \, dx}
+    }
+
+    \item Solve the following problems.
+    \numbers{
+        \item (a) \inline{6.75 \, cm^3}, (b) \inline{0.3 \, cm^2}
+        \item \inline{\frac{12}{5} \pi{} \, m^3}
+        \item \inline{0.4 \pi{} \, cm^2}
+        \item \inline{0.9 \pi{} \, cm^3}
+    }
+\end{enumerate}
+
+\newpage\subsection{Error Propagation}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        In practice, differentials can be used in the estimation of errors propagated by physical measuring devices.
+        If the measure value of \textit{x} is used to compute another value \inline{f (x)}, then the difference between \inline{f (x + \triangle{x})} and \textit{f (x)} is the propagated error.
         
-        \item Find \(dy\) and \(\triangle{y}\) for the given values of \(x\) and \(\triangle{x}\).
-        \begin{enumerate}[label*=\arabic*.]
-            \item \(dy = 2\), \(\triangle{y} = 2.25\)
-            \item \(dy = 6\), \(\triangle{y} = 7.625\)
-            \item \(dy = \frac{1}{12} \approx 0.083\), \(\triangle{y} = \sqrt[3]{9} - 2 \approx 0.080\)
-            \item \(dy = 0.25\), \(\triangle{y} = \sqrt[]{5} - \sqrt[]{4} \approx 0.236\)
-        \end{enumerate}
+        \block{f (x + \triangle{x}) \minus{} f (x) = \triangle{y} \approx{} dy} where:
+        
+        \begin{conditions}
+            x + \triangle{x} & Exact Value \\
+            \triangle{x} & Measurement Error \\
+            f (x) & Measured Value \\
+            \triangle{y} & Propagated Error
+        \end{conditions}
 
-        \item Find (a) \(\triangle{y}\); (b) \(dy\); (c) \(\triangle{y} - dy\).
-        \begin{enumerate}[label*=\arabic*.]
-            \item (a) 0.0309, (b) 0.03, (c) 0.0009
-            \item (a) -0.0996, (b) -0.1, (c) 0.0004
-            \item (a) \(\frac{1}{42} \approx 0.0238\), (b) \(\frac{1}{40} = 0.025\), (c) \(-\frac{1}{840} \approx -0.0012\)
-            \item (a) \(\frac{1}{42} \approx 0.0238\), (b) \(\frac{1}{45} = 0.022\), (c) \(\-frac{1}{630} \approx -0.0016\)
-            \item (a) \(-0.875\), (b) \(-1.5\), (c) \(0.625\)
-            \item (a) \(0.271\), (b) \(0.3\), (c) \(-0.029\)
-        \end{enumerate}
+        \textbf{NOTE.}
+        How do you know if the propagated error is large or small?
+        The answer is best given in \textit{relative} terms by comparing \textit{dA} and \textit{A}.
+        The ratio is called the \hl{relative error} and further be expressed as \hl{percentage error}.
+    }
 
-        \item Find \(dy\).
-        \begin{enumerate}[label*=\arabic*.]
-            \item \(dy = 3{(3x^2 - 2x + 1)}^2(6x - 2)dx\)
-            \item \(dy = \frac{3(2 - x^2)}{{(x^2 + 2)}^2}dx\)
-            \item \(dy = \frac{x(5x + 6)}{{(2x + 3)}^{1/2}}dx\)
-            \item \(dy = \frac{-x}{\sqrt[]{4 - x^2}}dx\)
-            \item \(dy = \frac{1 - 2\sin{x} + 2\cos{x}}{{(2 - \sin{x})}^2}dx\)
-            \item \(dy = 2 \tan{x} \sec^2{x}(2\tan^2{x} + 1)dx\)
-        \end{enumerate}
+    \follow\textbf{EXAMPLE 1.2.1}
+    A radius of a sphere is to be 3 cm with a possible error of 0.02 cm. (1) Use differentials to approximate the error in calculating the volume. (2) What is the relative error and percentage error?
 
-        \item Solve the following problems.
-        \begin{enumerate}[label*=\arabic*.]
-            \item (a) \(6.75 cm^3\), (b) \(0.3 cm^2\)
-            \item \(\frac{12}{5} \pi m^3\)
-            \item \(0.4 \pi cm^2\)
-            \item \(0.9 \pi cm^3\)
-        \end{enumerate}
+    \begin{align*}
+        && V &= \frac{4}{3} \pi r^3 \\
+        dV &= V' \, dr              &&& \frac{dV}{V} &= \frac{\pm 2.2619}{36 \pi} \\
+        &= 4 \pi r^2 \, dr          &&& (2.1) &= \pm 0.02 \\
+        &= 4 \pi {(3)}^2 (\pm 0.02) &&& (2.2) &= \pm 2\% \\
+        (1) &= \pm 2.2619 \, cm^3
+    \end{align*}
 
-    \end{enumerate}
+    \follow\textbf{SUMMARY.}
+    The essence of differentials provide us with a way of estimating the amount a function changes as a result of a small change in input values.
+
+    \follow\textbf{REMARK.}
+    Although the application of differentials to approximate function values is not very important in the age of technology, differentials are important as a \hl{convinient notational device} for the computation of antiderivatives.
+
+\newpage\section{Antidifferentiation: Indefinite Integration}
+
+\textbf{EXAMPLE 2.0.0}
+In order to find a function \textit{F} whose derivative is \inline{F' (x) = 3x^2}, we use our knowledge of derivatives to conclude the following: \block{F (x) = x^3 \; \textrm{since} \; \frac{d}{dx}[x^3] = 3x^2}
+The function \textit{F} is considered an antiderivative of \textit{f}.
+
+\follow\enclose{
+    \textbf{DEFINITION.}
+    A function \textit{F} is \hl{an antiderivative} of \textit{f} of an interval \textit{I} when \block{F' (x) = f (x)} for all \textit{x} in \textit{I}.
+    As for the previous example, \inline{F (x) = x^3} is an antiderivative of \inline{f (x) = 3x^2}.
+
+    \follow\textbf{NOTE.}
+    An antiderivative of \textit{f} is not unique because of the infinite possible values for the constant \textit{C}.
+}
+
+\subsection{General Antiderivative of a Function}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        If \textit{F} \hl{is an antiderivative of \textit{f}} on an interval \textit{I}, then G \hl{is an antiderivative of \textit{f}} on the interval \textit{I} if and only if \textit{G} is of the form \block{G (x) = F (x) + C} for all \textit{x} in \textit{I}, where \textit{C} is a constant.
+    }
+
+    \follow\enclose{
+        \textbf{DEFINITION.}
+        The operation of finding the antiderivatves of a function is called \hl{antidifferentiation}, or indefinite integration, and is denoted by an integral sign \inline{\int{}}. 
+        Additionally, the equation below states that when we antidifferentiate the differential of a function, we obtain the function plus an arbitrary constant. 
+        \block{\int{} f (x) \, dx = F (x) + C}
+        \begin{conditions}
+            \int{} & Integration Symbol \\
+            f (x) & Integrand \\
+            dx & Differential of X \\
+            F (x) & One Antiderivative \\
+            C & Constant of Integration
+        \end{conditions}
+        
+        \textbf{NOTE.}
+        The expression \inline{\int{} f (x) \, dx} is read as ``the antiderivative of f with respect to x''. The differential \textit{dx} serves to identify \textit{x} as the variable of integration. The term \hl{indefinite integral} is a synonym for antiderivative.
+    }
+
+\newpage\subsection{Basic Integration Rules}
+
+    \bigskip\begin{center}\begin{tabular}{ccc}
+        \toprule\ \textbf{Differentiation Formula} && \textbf{Integration Formula} \\
+        \midrule\ \inline{\frac{d}{dx}[C] = 0} && \inline{\int{} 0 \, dx = C} \\
+        \midrule\ \inline{\frac{d}{dx}[kx] = k} && \inline{\int{} k \, dx = kx + C} \\
+        \midrule\ \inline{\frac{d}{dx}[kf (x)] = kf' (x)} && \inline{\int{} kf (x) \, dx = k \int{} f (x) \, dx} \\
+        \midrule\ \inline{\frac{d}{dx}[f (x) \pm{} g (x)] = f' (x) \pm{} g ' (x)} && \inline{\int{} [f (x) \pm{} g (x)] \, dx = \int{} f (x) \, dx \pm{} \int{} g (x) \, dx} \\ 
+        \midrule\ \inline{\frac{d}{dx}[x^n] = {nx}^{n \minus{} 1}} && \inline{\int{} x^n \, dx = \frac{x^{n + 1}}{n + 1} + C}, \inline{n \neq{} \minus{} 1} \\
+        \midrule\ \inline{\frac{d}{dx}[\sin{x}] = \cos{x}} && \inline{\int{} \cos{x} \, dx = \sin{x} + C} \\
+        \midrule\ \inline{\frac{d}{dx}[\cos{x}] = \minus{} \sin{x}} && \inline{\int{} \sin{x} \, dx = \minus{} \cos{x} + C} \\
+        \midrule\ \inline{\frac{d}{dx}[\tan{x}] = \sec^2{x}} && \inline{\int{} sec^2{x} \, dx = \tan{x} + C} \\
+        \midrule\ \inline{\frac{d}{dx}[\sec{x}] = \sec{x} \tan{x}} && \inline{\int{} \sec{x} \tan{x} \, dx = \sec{x} + C} \\
+        \midrule\ \inline{\frac{d}{dx}[\cot{x}] = \minus{} \csc^2{x}} && \inline{\int{} \csc^2{x} \, dx = \minus{} \cot{x} + C} \\
+        \midrule\ \inline{\frac{d}{dx}[\csc{x}] = \minus{} \csc{x} \cot{x}} && \inline{\int{} \csc{x} \cot{x} \, dx = \minus{} \csc{x} + C} \\
+    \bottomrule\end{tabular}\end{center}
+
+\subsection{Power Rule of Integrals}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        As for the power rule of integrals, as long as \inline{n \neq{} 1},
+        \block{\int{} x^n \, dx = \frac{x^{n + 1}}{n + 1} + C}
+    }
+
+    \follow\textbf{EXAMPLE 2.3.1.}
+    Find the antiderivative of \inline{\int{} x^5 \, dx}.
+    \proving{
+        &= \frac{x^6}{6} + C
+    }
+
+    \follow\textbf{EXAMPLE 2.3.2.}
+    Find the antiderivative of \inline{\int{} \sqrt{x} \, dx}.
+    \proving{
+        &= \int{} x^{1/2} \, dx \\
+        &= \frac{x^{\frac{1}{2} + 1}}{\frac{1}{2} + 1} + C \\
+        &= \frac{x^{\frac{3}{2}}}{\frac{3}{2}} + C \\
+        &= \frac{2 x^{\frac{3}{2}}}{3} + C
+    }
+
+    \newpage\follow\textbf{EXAMPLE 2.3.3.}
+    Find the antiderivative of \inline{\int{} 3x \, dx}.
+    \proving{
+        &= 3 \int{} x \, dx \\
+        &= 3 \point{} \frac{x^2}{2} \\
+        &= \frac{3x^2}{2} + C
+    }
+
+    \follow\textbf{EXAMPLE 2.3.4.}
+    Find the antiderivative of \inline{\int{} \frac{1}{x^3} \, dx}.
+    \proving{
+        &= \minus{} \frac{1}{2x^2} + C
+    }
+
+    \follow\textbf{EXAMPLE 2.3.5.}
+    Find the antiderivative of \inline{\int{} 2 \sin{x} \, dx}.
+    \proving{
+        &= 2 \int{} \sin{x} \, dx \\
+        &= 2 \point{} \minus{} \cos{x} \\
+        &= \minus{} 2 \cos{x} + C
+    }
+
+    \follow\textbf{EXAMPLE 2.3.6.}
+    Find the antiderivative of \inline{\int{} (3x^4 \minus{} 5x^2 + x) \, dx}.
+    \proving{
+        &= 3 \int{} x^4 \, dx \minus{} 5 \int{} x^2 \, dx + \int{} x \, dx \\
+        &= \frac{3x^5}{5} \minus{} \frac{5x^3}{3} + \frac{2x^2}{2} + C
+    }
+
+    \follow\textbf{EXAMPLE 2.3.7.}
+    Find the antiderivative of \inline{\int{} \frac{x + 1}{\sqrt{x}} \, dx}.
+    \proving{
+        && &= \int{} \left(\frac{x}{\sqrt{x}} + \frac{1}{\sqrt{x}}\right) \, dx \\
+        && &= \int{} \left(\sqrt{x} + \frac{1}{\sqrt{x}}\right) \, dx \\
+        &= \int{} \sqrt{x} \, dx &&& &= \int{} \frac{1}{\sqrt{x}} \, dx \\
+        &= \int{} x^{\frac{1}{2}} \, dx &&& &= \int{} x^{\minus{} \frac{1}{2}} \, dx \\
+        &= \frac{2 \sqrt{x^3}}{3} &&& &= 2 \sqrt{x} \\
+        && &= \frac{2 \sqrt{x^3}}{3} + 2 \sqrt{x} \\
+        && &= \frac{2 \sqrt{x} (x + 3)}{3} + C
+    }
+
+    \newpage\follow\textbf{NOTE.}
+    The following are reciprocal and pythagorean identities for trigonometric integrals.
+    \proving{
+        \cot{x} &= \frac{1}{\tan{x}} = \frac{\cos{x}}{\sin{x}} & \sin^2{x} &+ \cos^2{x} = 1 \\
+        \csc{x} &= \frac{1}{\sin{x}} & \sec^2{x} &= 1 + \tan^2{x} \\
+        \sec{x} &= \frac{1}{\cos{x}} & \csc^2{x} &= 1 + \cot^2{x}
+    }
+    
+
+    \follow\textbf{EXAMPLE 2.3.8.}
+    Find the antiderivative of \inline{\int{} \frac{\sin{x}}{\cos^2{x}} \, dx}.
+    \proving{
+        &= \frac{1}{\cos{x}} + C \\
+        &= \sec{x} + C
+    }
 
 \end{document}
