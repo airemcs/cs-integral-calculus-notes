@@ -1,0 +1,337 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor, color, soul}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+
+\sethlcolor{yellow}
+
+\newcommand{\class}{Integral Calculus for Computer Science Students}
+\newcommand{\datewritten}{Term 1, Fall '23}
+\newcommand{\instructor}{Course Instructor: Noel T. Fortun}
+\newcommand{\notes}{A.L. Maagma}
+\newcommand{\follow}{\bigskip\noindent}
+\newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\mins}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
+
+% ---------------- Start Document ----------------
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+% -------------------- Header --------------------
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+    \textbf{\class} && \textbf{Date: \datewritten} \\
+    \textbf{\instructor} && \textbf{Notes: \notes} \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+% ------------- Topic: Differentials -------------
+
+\section{The Differentials}
+    \begin{enumerate}
+        \item Find \textit{dy} and \inline{\triangle{y}} for the given values of \textit{x} and \inline{\triangle{x}}.
+        \numbers{
+            \item \inline{y = x^2}, \inline{x = 2}, and \inline{\triangle{x} = 0.5}
+            \item \inline{y = x^3}, \inline{x = 2}, and \inline{\triangle{x} = 0.5}
+            \item \inline{y = \sqrt[3]{x}}, \inline{x = 8}, and \inline{\triangle{x} = 1}
+            \item \inline{ y = \sqrt{x}}, \inline{x = 4}, and \inline{\triangle{x} = 1}
+        }
+        
+        \item Find (a) \inline{\triangle{y}}, (b) \textit{dy}, (c) \inline{\triangle{y} \mins{} dy}.
+        \numbers{
+            \item \inline{y = x^2 \mins{} 3x}, \inline{x = 2}, and \inline{\triangle{x} = 0.03}
+            \item \inline{y = x^2 \mins{} 3x}, \inline{x = \mins{} 1}, and \inline{\triangle{x} = 0.02}
+            \item \inline{y = \frac{1}{x}}, \inline{x = \mins{} 2}, and \inline{\triangle{x} = \mins{} 0.1}
+            \item \inline{y = \frac{1}{x}}, \inline{x = 3}, and \inline{\triangle{x} = \mins{} 0.2}
+            \item \inline{y = x^3 + 1}, \inline{x = 1}, and \inline{\triangle{x} = \mins{} 0.5}
+            \item \inline{y = x^3 + 1}, \inline{x = \mins{} 1}, and \inline{\triangle{x} = 0.1}
+        }
+
+        \item Find \inline{dy}.
+        \numbers{
+            \item \inline{y = {(3x^2 \mins{} 2x + 1)}^3}
+            \item \inline{y = \frac{3x}{x^2 + 2}}
+            \item \inline{y = x^2 \, \sqrt{2x + 3}}
+            \item \inline{y = \sqrt{4 \mins{} x^2}}
+            \item \inline{y = \frac{2 + \cos(x)}{2 \mins{} \sin(x)}}
+            \item \inline{y = \tan^2(x) \sec^2(x)}
+        }
+
+        \item Solve the following problems.
+        \numbers{
+            \item The measurement of an edge of a cube is found to be 15 cm with a possible error of 0.01 cm. Use differentials to find the approximate error in computing from this measurement: (a) the volume; (b) the area of one of the faces.
+            \item An open cylindrical tank is to have an outside coating of thickness 2 cm. If the inner radius is 6 m and the altitude is 10 m, find by differentials the approximate amount of coating material to be used.
+            \item A burn on a person's skin is in the shape of a circle. Use differentials to find the approximate decrease in the area of the burn when the radius decreases from 1 cm to 0.8 cm.
+            \item A tumor in a person's body is spherical in shape. Use differentials to find the approximate increase in the volume of the tumor when the radius increases from 1.5 cm to 1.6 cm.
+        }
+    \end{enumerate}
+
+\newpage\subsection*{Answer Key}
+    \begin{enumerate}
+        \item Find \textit{dy} and \inline{\triangle{y}} for the given values of \textit{x} and \inline{\triangle{x}}.
+        \numbers{
+            \item \inline{dy = 2}, \inline{\triangle{y} = 2.25}
+            \item \inline{dy = 6}, \inline{\triangle{y} = 7.625}
+            \item \inline{dy = \frac{1}{12} \approx{} 0.083}, \inline{\triangle{y} = \sqrt[3]{9} \mins{} 2 \approx{} 0.080}
+            \item \inline{dy = 0.25}, \inline{\triangle{y} = \sqrt{5} \mins{} \sqrt{4} \approx{} 0.236}
+        }
+        
+        \item Find (a) \inline{\triangle{y}}, (b) \textit{dy}, (c) \inline{\triangle{y} \mins{} dy}.
+        \numbers{
+            \item (a) 0.0309, (b) 0.03, (c) 0.0009
+            \item (a) -0.0996, (b) -0.1, (c) 0.0004
+            \item (a) \inline{\frac{1}{42} \approx{} 0.0238}, (b) \inline{\frac{1}{40} = 0.025}, (c) \inline{\mins{} \frac{1}{840} \approx{} \mins{} 0.0012}
+            \item (a) \inline{\frac{1}{42} \approx{} 0.0238}, (b) \inline{\frac{1}{45} = 0.022}, (c) \inline{\frac{1}{630} \approx{} \mins{} 0.0016}
+            \item (a) \inline{\mins{} 0.875}, (b) \inline{\mins{} 1.5}, (c) 0.625
+            \item (a) 0.271, (b) 0.3, (c) \inline{\mins{} 0.029}
+        }
+
+        \item Find \inline{dy}.
+        \numbers{
+            \item \inline{dy = 3{(3x^2 \mins{} 2x + 1)}^2{(6x \mins{} 2)} \, dx}
+            \item \inline{dy = \frac{3(2 \mins{} x^2)}{{(x^2 + 2)}^2} \, dx}
+            \item \inline{dy = \frac{x (5x + 6)}{({2x + 3})^{1/2}} \, dx}
+            \item \inline{dy = \frac{\mins{} x}{\sqrt{4 \mins{} x^2}} \, dx}
+            \item \inline{dy = \frac{1 \mins{} 2 \sin(x) + 2 \cos(x)}{{(2 \mins{} \sin(x))}^2} \, dx}
+            \item \inline{dy = 2 \tan(x) \sec^2(x) x (2\tan^2(x) + 1) \, dx}
+        }
+
+        \item Solve the following problems.
+        \numbers{
+            \item (a) \inline{6.75 \, cm^3}, (b) \inline{0.3 \, cm^2}
+            \item \inline{\frac{12}{5} \pi{} \, m^3}
+            \item \inline{0.4 \pi{} \, cm^2}
+            \item \inline{0.9 \pi{} \, cm^3}
+        }
+    \end{enumerate}
+
+\newpage\section{Antidifferentiation: Indefinite Integration}
+    \begin{enumerate}
+        \item \inline{\int{} (x^2 + x^{\mins{} 2}) \, dx}
+        \item \inline{\int{} (\sqrt{x^3} + \sqrt[3]{x^2}) \, dx}
+        \item \inline{\int{} \left(x^4 \mins{} \frac{1}{2}x^3 + \frac{1}{4}x \mins{} 2\right) \, dx}
+        \item \inline{\int{} (y^3 + 1.8y^2 \mins{} 2.4y) \, dy}
+        \item \inline{\int{} (1 \mins{} t) (2 + t^2) \, dt}
+        \item \inline{\int{} v {(v^2 + 2)}^2 \, dv}
+        \item \inline{\int{} \frac{x^3 \mins{} 2 \sqrt{x}}{x} \, dx}
+        \item \inline{\int{} (\theta{} \mins{} \csc{\theta} \cot{\theta}) \, d\theta{}}
+        \item \inline{\int{} \sec{t} (\sec{t} + \tan{t}) \, dt}
+        \item \inline{\int{} (1 + \tan^2{\alpha}) \, d\alpha{}}
+        \item \inline{\int{} \frac{\sin{2x}}{\sin{x}} \, dx}
+    \end{enumerate}
+
+\newpage\subsection*{Answer Key}
+    \begin{enumerate}
+        \item \inline{\int{} (x^2 + x^{\mins{} 2}) \, dx}
+        \proving{
+            &= \frac{x^3}{3} + \frac{x^{\mins{} 1}}{\mins{} 1} + C \\
+            &= \frac{1}{3}x^3 \mins{} \frac{1}{x} + C
+        }
+
+        \item \inline{\int{} (\sqrt{x^3} + \sqrt[3]{x^2}) \, dx}
+        \proving{
+            &= \int{} (x^{3/2} + x^{2/3}) \, dx \\
+            &= \frac{x^{5/2}}{5/2} + \frac{x^{5/3}}{5/3} + C \\
+            &= \frac{2x^{5/2}}{5} + \frac{3x^{5/3}}{5} + C
+        }
+        
+        \item \inline{\int{} \left(x^4 \mins{} \frac{1}{2}x^3 + \frac{1}{4}x \mins{} 2\right) \, dx}
+        \proving{
+            &= \frac{x^5}{5} \mins{} \frac{1}{2} \frac{x^4}{4} + \frac{1}{4} \frac{x^2}{2} \mins{} 2x + C \\
+            &= \frac{x^5}{5} \mins{} \frac{x^4}{8} + \frac{x^2}{8} \mins{} 2x + C
+        }
+        
+        \item \inline{\int{} (y^3 + 1.8y^2 \mins{} 2.4y) \, dy}
+        \proving{
+            &= \frac{y^4}{4} + 1.8 \frac{y^3}{3} \mins{} 2.4 \frac{y^2}{2} + C \\
+            &= \frac{y^4}{4} + 0.6 y^3 \mins{} 1.2y^2 + C
+        }
+
+        \item \inline{\int{} (1 \mins{} t) (2 + t^2) \, dt}
+        \proving{
+            &= (2 \mins{} 2t + t^2 \mins{} t^3) \, dt \\
+            &= 2t \mins{} \frac{2t^2}{2} + \frac{t^3}{3} \mins{t^4}{4} + C \\
+            &= 2t \mins{} t^2 + \frac{t^3}{3} \mins{} \frac{t^4}{4} + C
+        }
+
+        \item \inline{\int{} v {(v^2 + 2)}^2 \, dv}
+        \proving{
+            &= \int{} v (v^4 + 4v^2 + 4) \, dv \\
+            &= \int{} (v^5 + 4v^3 + 4v) \, dv \\
+            &= \frac{v^6}{6} + \frac{4v^4}{4} + \frac{4v^2}{2} + C \\
+            &= \frac{v^6}{6} + v^4 + 2v^2 + C
+        }
+
+        \item \inline{\int{} \frac{x^3 \mins{} 2 \sqrt{x}}{x} \, dx}
+        \proving{
+            &= \int{} \left(\frac{x^3}{x} \mins{} \frac{2x^{1/2}}{x} \right) \, dx \\
+            &= \int{} (x^2 \mins{} 2x^{\mins{} 1/2}) \, dx \\
+            &= \frac{x^3}{3} \mins{} \frac{2x^{1/2}}{1/2} + C \\
+            &= \frac{x^3}{3} \mins{} 4 \sqrt{x} + C
+        }
+
+        \item \inline{\int{} (\theta{} \mins{} \csc{\theta} \cot{\theta}) \, d\theta{}}
+        \proving{
+            &= \frac{\theta^2{}}{2} + \csc{\theta} + C
+        }
+        
+        \item \inline{\int{} \sec{t} (\sec{t} + \tan{t}) \, dt}
+        \proving{
+            &= \int{} (\sec^2{t} + \sec{t} \tan{t}) \, dt \\
+            &= \tan{t} + \sec{t} + C
+        }
+
+        \item \inline{\int{} (1 + \tan^2{\alpha}) \, d\alpha{}}
+        \proving{
+            &= \int{} \sec^2{\alpha} \, d\alpha{} \\
+            &= \tan{\alpha} + C
+        }
+
+        \item \inline{\int{} \frac{\sin{2x}}{\sin{x}} \, dx}
+        \proving{
+            &= \int{} \frac{2\sin{x}\cos{x}}{\sin{x}} \, dx \\
+            &= \int{} 2\cos{x} \, dx \\
+            &= 2 \sin{x} + C
+        }
+    \end{enumerate}
+
+\newpage\section{Integration by Substitution}
+    \begin{enumerate}
+        \item \inline{\int{} x \sin{(x^2)} \, dx}
+        \item \inline{\int{} x^2 {(x^3 + 5)}^9 \, dx}
+        \item \inline{\int{} {(3x \mins{} 2)}^{20} \, dx}
+        \item \inline{\int{} {(3t + 2)}^{2.4} \, dt}
+        \item \inline{\int{} (x + 1) \sqrt{2x + x^2} \, dx}
+        \item \inline{\int{} \frac{x}{{({x^2 + 1})}^2} \, dx}
+        \item \inline{\int{} \sin{\pi{} t} \, dt}
+        \item \inline{\int{} \frac{a + bx^2}{\sqrt{3ax + bx^3}} \, dx}
+        \item \inline{\int{} \sec{2\theta{}} \tan{2\theta{}} \, d\theta}
+        \item \inline{\int{} \frac{\cos{\sqrt{t}}}{\sqrt{t}} \, dt}
+        \item \inline{\int{} \sqrt{x} \sin{(1 + x^{\frac{3}{2}})} \, dx}
+        \item \inline{\int{} \cos{\theta{}} \sin^6{\theta{}} \, d\theta{}}
+        \item \inline{\int{} {(1 + \tan{\theta})}^5 \sec^2{\theta{}} \, d\theta{}}
+        \item \inline{\int{} \frac{z^2}{\sqrt[3]{1 + z^3}} \, dz}
+        \item \inline{\int{} \frac{\cos{x}}{\sin^2{x}} \, dx}
+        \item \inline{\int{} \sqrt{\cot{x}} \csc^2{x} \, dx}
+        \item \inline{\int{} \frac{\cos{(\frac{\pi{}}{x})}}{x^2} \, dx}
+        \item \inline{\int{} \frac{dt}{\cos^2{t} \sqrt{1 + \tan{t}}}}
+        \item \inline{\int{} \sec^3{x} \tan{x} \, dx}
+        \item \inline{\int{} \sin{t} \sec^2{(\cos{t})} \, dt}
+        \item \inline{\int{} \frac{x^2}{\sqrt{1 \mins{} x}} \, dx}
+        \item \inline{\int{} \frac{x}{\sqrt[4]{x + 2}} \, dx}
+    \end{enumerate}
+
+\newpage\subsection*{Answer Key}
+    \begin{enumerate}
+        \item \inline{\int{} x \sin{(x^2)} \, dx}
+        \begin{align*}
+            &= \int{} \sin{(x^2)} \, x \, dx                        & u &= x^2 \\
+            &= \frac{1}{2} \int{} \sin{u} \, du                     & du &= 2x \, dx \\
+            &= \frac{1}{2} \left(\mins{} \cos{u}\right) + C \\
+            &= \mins{} \frac{1}{2} \cos{(x^2)} + C
+        \end{align*}
+
+        \item \inline{\int{} x^2 {(x^3 + 5)}^9 \, dx}
+        \begin{align*}
+            &= \int{} {(x^3 + 5)}^9 x^2 \, dx                       & u &= x^3 + 5 \\
+            &= \frac{1}{3} \int{} u^9 \, du                         & du &= 3x^2 \\
+            &= \frac{1}{3} \left(\frac{u^{10}}{10}\right) + C \\
+            &= \frac{u^{10}}{30} + C \\
+            &= \frac{{(x^3 + 5)}^{10}}{30} + C
+        \end{align*}
+
+        \item \inline{\int{} {(3x \mins{} 2)}^{20} \, dx}
+        \begin{align*}
+            &= \frac{1}{3} \int{} u^{20} \, du                      & u &= 3x \mins{} 2 \\
+            &= \frac{1}{3} \left(\frac{u^{21}}{21}\right) + C       & du &= 3 \, dx \\
+            &= \frac{u^{21}}{63} + C \\
+            &= \frac{{(3x \mins{} 2)}^{21}}{63} + C
+        \end{align*}
+
+        \newpage\item \inline{\int{} {(3t + 2)}^{2.4} \, dt}
+        \begin{align*}
+            &= \frac{1}{3} \int{} u^{2.4} \, du                     & u &= 3t + 2 \\
+            &= \frac{1}{3} \left(\frac{u^{3.4}}{3.4}\right) + C     & du &= 3 \, dt \\
+            &= \frac{u^{3.4}}{10.2} + C    
+        \end{align*}
+
+        \item \inline{\int{} (x + 1) \sqrt{2x + x^2} \, dx}
+        \begin{align*}
+            &= \int{} (x + 1) {(2x + x^2)}^{1/2} \, dx              & u &= 2x + x^2 \\
+            &= \frac{1}{2} \int{} u^{1/2} \, dx                     & du &= 2 + 2x \, dx \\
+            &= \frac{1}{2} \left(\frac{2}{3} u^{3/2}\right) + C \\
+            &= \frac{1}{3} u^{3/2} + C \\
+            &= \frac{{(2x + x^2)}^{3/2}}{3} + C
+        \end{align*}
+
+        \item \inline{\int{} \frac{x}{{({x^2 + 1})}^2} \, dx}
+        \begin{align*}
+            &= \int{} x {(x^2 + 1)}^{-2} \, dx                      & u &= x^2 + 1 \\
+            &= \int{} {(x^2 + 1)}^{-2} x \, dx                      & du &= 2x \, dx \\
+            &= \frac{1}{2} \int{} u^{-2} \, du \\
+            &= \frac{1}{2} \left(-u^{-1}\right) + C \\
+            &= -\frac{1}{(2x^2 + 2)} + C
+        \end{align*}
+
+        \item \inline{\int{} \sin{\pi{} t} \, dt}
+
+        \item \inline{\int{} \frac{a + bx^2}{\sqrt{3ax + bx^3}} \, dx}
+        \newpage\begin{align*}
+            &= \int (a + bx^2) {(3ax + bx^3)}^{\mins{} 1/2} \, dx            & u &= 3ax + bx^3 \\
+            &= \frac{1}{3} \int{} u^{\mins{} 1/2} \, du                      & du &= 3a + 3bx^2 \, dx \\ 
+            &= \frac{1}{3} \left(2u^{1/2}\right) + C \\
+            &= \frac{2 \sqrt{3ax + bx^3}}{3} + C
+        \end{align*}
+
+        \item \inline{\int{} \sec{2\theta{}} \tan{2\theta{}} \, d\theta}
+        \item \inline{\int{} \frac{\cos{\sqrt{t}}}{\sqrt{t}} \, dt}
+        \item \inline{\int{} \sqrt{x} \sin{(1 + x^{\frac{3}{2}})} \, dx}
+        \item \inline{\int{} \cos{\theta{}} \sin^6{\theta{}} \, d\theta{}}
+        \item \inline{\int{} {(1 + \tan{\theta})}^5 \sec^2{\theta{}} \, d\theta{}}
+
+        \item \inline{\int{} \frac{z^2}{\sqrt[3]{1 + z^3}} \, dz}
+        \begin{align*}
+            &= \int{} {(1 + z^3)}^{-1/3} z^2 \, dz                           & u &= 1 + z^3 \\
+            &= \frac{1}{3} \int{} u^{-1/3} \, du                             & du &= 3z^2 \, dz \\
+            &= \frac{1}{3} \left(\frac{3}{2} u^{2/3}\right) + C \\
+            &= \frac{u^{2/3}}{2} + C \\
+            &= \frac{\sqrt[3]{{(1 + z^3)}^2}}{2} + C
+        \end{align*}
+
+        \item \inline{\int{} \frac{\cos{x}}{\sin^2{x}} \, dx}
+        \item \inline{\int{} \sqrt{\cot{x}} \csc^2{x} \, dx}
+        \item \inline{\int{} \frac{\cos{(\frac{\pi{}}{x})}}{x^2} \, dx}
+        \item \inline{\int{} \frac{dt}{\cos^2{t} \sqrt{1 + \tan{t}}}}
+        \item \inline{\int{} \sec^3{x} \tan{x} \, dx}
+        \item \inline{\int{} \sin{t} \sec^2{(\cos{t})} \, dt}
+        \item \inline{\int{} \frac{x^2}{\sqrt{1 \mins{} x}} \, dx}
+        \item \inline{\int{} \frac{x}{\sqrt[4]{x + 2}} \, dx}
+    \end{enumerate}
+
+\newpage\section{Separable Differential Equations}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+
+\end{document}

@@ -107,87 +107,7 @@
         The final equation utilized our solution at \inline{x = 2}, \inline{\triangle{x} = dx = 0.05}.
         Observe the approximation of \inline{\triangle{y} \approx{} dy} becomes better as \inline{\triangle{x}} becomes smaller.
 
-    \newpage\subsection*{Practice Exercises}
-
-        \begin{enumerate}
-            \item Find \textit{dy} and \inline{\triangle{y}} for the given values of \textit{x} and \inline{\triangle{x}}.
-            \numbers{
-                \item \inline{y = x^2}, \inline{x = 2}, and \inline{\triangle{x} = 0.5}
-                \item \inline{y = x^3}, \inline{x = 2}, and \inline{\triangle{x} = 0.5}
-                \item \inline{y = \sqrt[3]{x}}, \inline{x = 8}, and \inline{\triangle{x} = 1}
-                \item \inline{ y = \sqrt{x}}, \inline{x = 4}, and \inline{\triangle{x} = 1}
-            }
-            
-            \item Find (a) \inline{\triangle{y}}, (b) \textit{dy}, (c) \inline{\triangle{y} \mins{} dy}.
-            \numbers{
-                \item \inline{y = x^2 \mins{} 3x}, \inline{x = 2}, and \inline{\triangle{x} = 0.03}
-                \item \inline{y = x^2 \mins{} 3x}, \inline{x = \mins{} 1}, and \inline{\triangle{x} = 0.02}
-                \item \inline{y = \frac{1}{x}}, \inline{x = \mins{} 2}, and \inline{\triangle{x} = \mins{} 0.1}
-                \item \inline{y = \frac{1}{x}}, \inline{x = 3}, and \inline{\triangle{x} = \mins{} 0.2}
-                \item \inline{y = x^3 + 1}, \inline{x = 1}, and \inline{\triangle{x} = \mins{} 0.5}
-                \item \inline{y = x^3 + 1}, \inline{x = \mins{} 1}, and \inline{\triangle{x} = 0.1}
-            }
-
-            \item Find \inline{dy}.
-            \numbers{
-                \item \inline{y = {(3x^2 \mins{} 2x + 1)}^3}
-                \item \inline{y = \frac{3x}{x^2 + 2}}
-                \item \inline{y = x^2 \, \sqrt{2x + 3}}
-                \item \inline{y = \sqrt{4 \mins{} x^2}}
-                \item \inline{y = \frac{2 + \cos(x)}{2 \mins{} \sin(x)}}
-                \item \inline{y = \tan^2(x) \sec^2(x)}
-            }
-
-            \item Solve the following problems.
-            \numbers{
-                \item The measurement of an edge of a cube is found to be 15 cm with a possible error of 0.01 cm. Use differentials to find the approximate error in computing from this measurement: (a) the volume; (b) the area of one of the faces.
-                \item An open cylindrical tank is to have an outside coating of thickness 2 cm. If the inner radius is 6 m and the altitude is 10 m, find by differentials the approximate amount of coating material to be used.
-                \item A burn on a person's skin is in the shape of a circle. Use differentials to find the approximate decrease in the area of the burn when the radius decreases from 1 cm to 0.8 cm.
-                \item A tumor in a person's body is spherical in shape. Use differentials to find the approximate increase in the volume of the tumor when the radius increases from 1.5 cm to 1.6 cm.
-            }
-        \end{enumerate}
-
-    \newpage\subsection*{Answer Key}
-
-        \begin{enumerate}
-            \item Find \textit{dy} and \inline{\triangle{y}} for the given values of \textit{x} and \inline{\triangle{x}}.
-            \numbers{
-                \item \inline{dy = 2}, \inline{\triangle{y} = 2.25}
-                \item \inline{dy = 6}, \inline{\triangle{y} = 7.625}
-                \item \inline{dy = \frac{1}{12} \approx{} 0.083}, \inline{\triangle{y} = \sqrt[3]{9} \mins{} 2 \approx{} 0.080}
-                \item \inline{dy = 0.25}, \inline{\triangle{y} = \sqrt{5} \mins{} \sqrt{4} \approx{} 0.236}
-            }
-            
-            \item Find (a) \inline{\triangle{y}}, (b) \textit{dy}, (c) \inline{\triangle{y} \mins{} dy}.
-            \numbers{
-                \item (a) 0.0309, (b) 0.03, (c) 0.0009
-                \item (a) -0.0996, (b) -0.1, (c) 0.0004
-                \item (a) \inline{\frac{1}{42} \approx{} 0.0238}, (b) \inline{\frac{1}{40} = 0.025}, (c) \inline{\mins{} \frac{1}{840} \approx{} \mins{} 0.0012}
-                \item (a) \inline{\frac{1}{42} \approx{} 0.0238}, (b) \inline{\frac{1}{45} = 0.022}, (c) \inline{\frac{1}{630} \approx{} \mins{} 0.0016}
-                \item (a) \inline{\mins{} 0.875}, (b) \inline{\mins{} 1.5}, (c) 0.625
-                \item (a) 0.271, (b) 0.3, (c) \inline{\mins{} 0.029}
-            }
-
-            \item Find \inline{dy}.
-            \numbers{
-                \item \inline{dy = 3{(3x^2 \mins{} 2x + 1)}^2{(6x \mins{} 2)} \, dx}
-                \item \inline{dy = \frac{3(2 \mins{} x^2)}{{(x^2 + 2)}^2} \, dx}
-                \item \inline{dy = \frac{x (5x + 6)}{({2x + 3})^{1/2}} \, dx}
-                \item \inline{dy = \frac{\mins{} x}{\sqrt{4 \mins{} x^2}} \, dx}
-                \item \inline{dy = \frac{1 \mins{} 2 \sin(x) + 2 \cos(x)}{{(2 \mins{} \sin(x))}^2} \, dx}
-                \item \inline{dy = 2 \tan(x) \sec^2(x) x (2\tan^2(x) + 1) \, dx}
-            }
-
-            \item Solve the following problems.
-            \numbers{
-                \item (a) \inline{6.75 \, cm^3}, (b) \inline{0.3 \, cm^2}
-                \item \inline{\frac{12}{5} \pi{} \, m^3}
-                \item \inline{0.4 \pi{} \, cm^2}
-                \item \inline{0.9 \pi{} \, cm^3}
-            }
-        \end{enumerate}
-
-    \newpage\subsection{Error Propagation}
+    \subsection{Error Propagation}
 
         \enclose{
             \textbf{DEFINITION.}
@@ -226,7 +146,7 @@
         \follow\textbf{REMARK.}
         Although the application of differentials to approximate function values is not very important in the age of technology, differentials are important as a \hl{convinient notational device} for the computation of antiderivatives.
 
-\newpage\section{Antidifferentiation: Indefinite Integration}
+\section{Antidifferentiation: Indefinite Integration}
 
     \textbf{EXAMPLE 2.0.1}
     In order to find a function \textit{F} whose derivative is \inline{F' (x) = 3x^2}, we use our knowledge of derivatives to conclude the following: \block{F (x) = x^3 \; \textrm{since} \; \frac{d}{dx}[x^3] = 3x^2}
@@ -265,7 +185,7 @@
             The expression \inline{\int{} f (x) \, dx} is read as ``the antiderivative of f with respect to x''. The differential \textit{dx} serves to identify \textit{x} as the variable of integration. The term \hl{indefinite integral} is a synonym for antiderivative.
         }
 
-    \newpage\subsection{Basic Integration Rules}
+    \subsection{Basic Integration Rules}
 
         \bigskip\begin{center}\begin{tabular}{ccc}
             \toprule\ \textbf{Differentiation Formula} && \textbf{Integration Formula} \\
@@ -305,7 +225,7 @@
             &= \frac{2 x^{\frac{3}{2}}}{3} + C
         }
 
-        \newpage\follow\textbf{EXAMPLE 2.3.3.}
+        \follow\textbf{EXAMPLE 2.3.3.}
         Find the antiderivative of \inline{\int{} 3x \, dx}.
         \proving{
             &= 3 \int{} x \, dx \\
@@ -346,7 +266,7 @@
             && &= \frac{2 \sqrt{x} (x + 3)}{3} + C
         }
 
-        \newpage\follow\textbf{NOTE.}
+        \follow\textbf{NOTE.}
         The following are reciprocal and pythagorean identities for trigonometric integrals.
         \proving{
             \cot{x} &= \frac{1}{\tan{x}} = \frac{\cos{x}}{\sin{x}} & \sin^2{x} &+ \cos^2{x} = 1 \\
@@ -371,102 +291,8 @@
             &= \int{} \sec^2{\theta} \, d\theta{} + \int{} \sec{\theta} \tan{\theta} \, d\theta{} \\
             &= \tan{\theta} + \sec{\theta} + C
         }
-    
-    \newpage\subsection*{Practice Exercises}
 
-        \begin{enumerate}
-            \item \inline{\int{} (x^2 + x^{\mins{} 2}) \, dx}
-            \item \inline{\int{} (\sqrt{x^3} + \sqrt[3]{x^2}) \, dx}
-            \item \inline{\int{} \left(x^4 \mins{} \frac{1}{2}x^3 + \frac{1}{4}x \mins{} 2\right) \, dx}
-            \item \inline{\int{} (y^3 + 1.8y^2 \mins{} 2.4y) \, dy}
-            \item \inline{\int{} (1 \mins{} t) (2 + t^2) \, dt}
-            \item \inline{\int{} v {(v^2 + 2)}^2 \, dv}
-            \item \inline{\int{} \frac{x^3 \mins{} 2 \sqrt{x}}{x} \, dx}
-            \item \inline{\int{} (\theta{} \mins{} \csc{\theta} \cot{\theta}) \, d\theta{}}
-            \item \inline{\int{} \sec{t} (\sec{t} + \tan{t}) \, dt}
-            \item \inline{\int{} (1 + \tan^2{\alpha}) \, d\alpha{}}
-            \item \inline{\int{} \frac{\sin{2x}}{\sin{x}} \, dx}
-        \end{enumerate}
-
-    \newpage\subsection*{Answer Key}
-
-        \begin{enumerate}
-
-            \item \inline{\int{} (x^2 + x^{\mins{} 2}) \, dx}
-            \proving{
-                &= \frac{x^3}{3} + \frac{x^{\mins{} 1}}{\mins{} 1} + C \\
-                &= \frac{1}{3}x^3 \mins{} \frac{1}{x} + C
-            }
-
-            \item \inline{\int{} (\sqrt{x^3} + \sqrt[3]{x^2}) \, dx}
-            \proving{
-                &= \int{} (x^{3/2} + x^{2/3}) \, dx \\
-                &= \frac{x^{5/2}}{5/2} + \frac{x^{5/3}}{5/3} + C \\
-                &= \frac{2x^{5/2}}{5} + \frac{3x^{5/3}}{5} + C
-            }
-            
-            \item \inline{\int{} \left(x^4 \mins{} \frac{1}{2}x^3 + \frac{1}{4}x \mins{} 2\right) \, dx}
-            \proving{
-                &= \frac{x^5}{5} \mins{} \frac{1}{2} \frac{x^4}{4} + \frac{1}{4} \frac{x^2}{2} \mins{} 2x + C \\
-                &= \frac{x^5}{5} \mins{} \frac{x^4}{8} + \frac{x^2}{8} \mins{} 2x + C
-            }
-            
-            \item \inline{\int{} (y^3 + 1.8y^2 \mins{} 2.4y) \, dy}
-            \proving{
-                &= \frac{y^4}{4} + 1.8 \frac{y^3}{3} \mins{} 2.4 \frac{y^2}{2} + C \\
-                &= \frac{y^4}{4} + 0.6 y^3 \mins{} 1.2y^2 + C
-            }
-
-            \item \inline{\int{} (1 \mins{} t) (2 + t^2) \, dt}
-            \proving{
-                &= (2 \mins{} 2t + t^2 \mins{} t^3) \, dt \\
-                &= 2t \mins{} \frac{2t^2}{2} + \frac{t^3}{3} \mins{t^4}{4} + C \\
-                &= 2t \mins{} t^2 + \frac{t^3}{3} \mins{} \frac{t^4}{4} + C
-            }
-
-            \item \inline{\int{} v {(v^2 + 2)}^2 \, dv}
-            \proving{
-                &= \int{} v (v^4 + 4v^2 + 4) \, dv \\
-                &= \int{} (v^5 + 4v^3 + 4v) \, dv \\
-                &= \frac{v^6}{6} + \frac{4v^4}{4} + \frac{4v^2}{2} + C \\
-                &= \frac{v^6}{6} + v^4 + 2v^2 + C
-            }
-
-            \item \inline{\int{} \frac{x^3 \mins{} 2 \sqrt{x}}{x} \, dx}
-            \proving{
-                &= \int{} \left(\frac{x^3}{x} \mins{} \frac{2x^{1/2}}{x} \right) \, dx \\
-                &= \int{} (x^2 \mins{} 2x^{\mins{} 1/2}) \, dx \\
-                &= \frac{x^3}{3} \mins{} \frac{2x^{1/2}}{1/2} + C \\
-                &= \frac{x^3}{3} \mins{} 4 \sqrt{x} + C
-            }
-
-            \item \inline{\int{} (\theta{} \mins{} \csc{\theta} \cot{\theta}) \, d\theta{}}
-            \proving{
-                &= \frac{\theta^2{}}{2} + \csc{\theta} + C
-            }
-            
-            \item \inline{\int{} \sec{t} (\sec{t} + \tan{t}) \, dt}
-            \proving{
-                &= \int{} (\sec^2{t} + \sec{t} \tan{t}) \, dt \\
-                &= \tan{t} + \sec{t} + C
-            }
-
-            \item \inline{\int{} (1 + \tan^2{\alpha}) \, d\alpha{}}
-            \proving{
-                &= \int{} \sec^2{\alpha} \, d\alpha{} \\
-                &= \tan{\alpha} + C
-            }
-
-            \item \inline{\int{} \frac{\sin{2x}}{\sin{x}} \, dx}
-            \proving{
-                &= \int{} \frac{2\sin{x}\cos{x}}{\sin{x}} \, dx \\
-                &= \int{} 2\cos{x} \, dx \\
-                &= 2 \sin{x} + C
-            }
-
-        \end{enumerate}
-
-\newpage\section{Integration by Substitution}
+\section{Integration by Substitution}
 
     \enclose{
         \textbf{DEFINITION.}
@@ -503,7 +329,7 @@
             }
         }
 
-        \newpage\follow\textbf{EXAMPLE 3.1.1.}
+        \follow\textbf{EXAMPLE 3.1.1.}
         Find the antiderivative of \inline{\int{} \sqrt{3x + 4} \, dx}.
 
         \begin{align*}
@@ -526,7 +352,7 @@
             &= \frac{1}{18} {(1 \mins{} 8x^3)}^{\mins{} 3} + C
         \end{align*}
         
-        \follow\textbf{EXAMPLE 3.1.3.}
+        \newpage\follow\textbf{EXAMPLE 3.1.3.}
         Find the antiderivative of \inline{\int{} x^2 \sqrt{1 + x} \, dx}.
 
         \begin{align*}
@@ -536,74 +362,203 @@
             &= \frac{2}{7} u^{7/2} \mins{} \frac{4}{5} u^{5/2} + \frac{2}{3} u^{3/2} + C                            \\
             &= \frac{2}{7} {(1 + x)}^{7/2} \mins{} \frac{4}{5} {(1 + x)}^{5/2} + \frac{2}{3} {(1 + x)}^{3/2} + C
         \end{align*}
+
+        \follow\textbf{EXAMPLE 3.1.4.}
+        Find the antiderivative of \inline{\int{} \sin{x} \sqrt{1 \mins{} \cos{x}} \, dx}.
+
+        \begin{align*}
+            &= \int{} \sqrt{u} \, du    & u &= 1 \mins{} \cos{x} \\
+            &= \int{} {(u)}^{1/2} \, du & du &= \sin{x} \, dx \\
+            &= \frac{2}{3} \sqrt{u^3} \\
+            &= \frac{2}{3} \sqrt{{(1 \mins{} \cos{x})}^3} + C
+        \end{align*}
+
+        \follow\textbf{EXAMPLE 3.1.5.}
+        Find the antiderivative of \inline{\int{} (x + 1) \sqrt{(2x + x^2)} \, dx}.
+        
+        \begin{align*}
+            &= \int{} \sqrt{u} (x + 1) \, dx                        & u &= 2x + x^2 \\
+            &= \frac{1}{2} \int{} \sqrt{u} \, du                    & du &= 2x + 2 \\
+            &= \frac{1}{2} \int{} {(u)}^{1/2} \, du \\
+            &= \frac{1}{2} \point{} \frac{2}{3} {(u)}^{3/2} + C \\
+            &= \frac{1}{3} {(x^2 + 2x)}^{3/2} + C
+        \end{align*}
+
+        \newpage\follow\textbf{EXAMPLE 3.1.6.}
+        Find the antiderivative of \inline{\int{} \frac{x^2}{\sqrt[3]{1 + x^3}} \, dx}.
+
+        \begin{align*}
+            &= \int{} \frac{x^2}{\sqrt[3]{u}} \, dx                 & u &= 1 + x^3 \\
+            &= \frac{1}{3} \int{} \frac{du}{\sqrt[3]{u}}            & du &= 3x^2 \, dx \\
+            &= \frac{1}{3} \int{} {(u)}^{\mins 1/3} \, du \\
+            &= \frac{1}{3} \point{} \frac{3}{2} {(u)}^{2/3} + C \\
+            &= \frac{{(1 + x^3)}^{2/3}}{2} + C
+        \end{align*}
+
+        \follow\textbf{EXAMPLE 3.1.7.}
+        Find the antiderivative of \inline{\int{} x \sqrt{x + 2} \, dx}.
+        
+        \begin{align*}
+            &= \int{} (u \mins{} 2) {(u)}^{1/2} \, du       & u &= x + 2 \\
+            &= \int{} (u^{3/2} \mins{} 2u^{1/2}) \, du      & du &= dx \\
+            &= \frac{1}{2} \left(\frac{2}{5} u^{5/2} \mins{} \frac{4}{3} u^{3/2}\right) \\
+            &= \frac{2}{5} u^{5/2} \mins{} \frac{4}{3} u^{3/2} + C \\
+            &= \frac{2}{5} {(x + 2)}^{5/2} \mins{} \frac{4}{3} {(x + 2)}^{3/2} + C
+        \end{align*}
+
+        \follow\textbf{EXAMPLE 3.1.8.}
+        Find the antiderivative of \inline{\int{} \frac{x + 3}{{(3 \mins{} x)}^{2/3}} \, dx}.
+
+        \begin{align*}
+            &= \mins{} \int{} \frac{6 \mins{} u}{{(u)}^{2/3}} \, du               & u &= 3 \mins{} x \\
+            &= \mins{} \int{} (6 \mins{} u){(u)}^{\mins{} 2/3} \, du              & du &= \mins{} \, dx \\
+            &= \mins{} \int{} 6 u^{\mins{} 2/3} \mins{} u^{1/3} \, du \\
+            &= \mins{} \left(18 u^{1/3} \mins{} \frac{4}{3} u^{4/3}\right) + C \\
+            &= \mins{} 18 u^{1/3} + \frac{3}{4} u^{4/3} + C \\
+            &= \mins{} 18 {(3 \mins{} x)}^{1/3} + \frac{3}{4} {(3 \mins{} x)}^{4/3} + C
+        \end{align*}
+
+\section{Separable Differential Equations}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        These are equations that involve derivatives such as \inline{\frac{dy}{dx} = 2x}.
+        Since we know that derivatives pertain precisely to rates of change, differential equations best model change.
+        Its application could be found in diverse situations, especially in the sciences, such as physics, chemistry, economics, biology, and more.
+        An example of a model to understand the spread of Coronavirus.
+    }
+
+    \subsection{Differential Equations}
     
-    \newpage\subsection*{Practice Exercises}
+        \enclose{
+            \textbf{DEFINITION.}
+            The order of a differential equation is the order of the derivative of the \hl{highest order} that appears in the equation.
+        }
 
-        \begin{enumerate}
-            \item \inline{\int{} x \sin{(x^2)} \, dx}
-            \item \inline{\int{} x^2 {(x^3 + 5)}^9 \, dx}
-            \item \inline{\int{} {(3x \mins{} 2)}^{20} \, dx}
-            \item \inline{\int{} {(3t + 2)}^{2.4} \, dx}
-            \item \inline{\int{} (x + 1) \sqrt{2x + x^2} \, dx}
-            \item \inline{\int{} \frac{x}{{({x^2 + 1})}^2} \, dx}
-            \item \inline{\int{} \sin{\pi{} t} \, dt}
-            \item \inline{\int{} \frac{a + bx^2}{\sqrt{3ax + bx^3}} \, dx}
-            \item \inline{\int{} \sec{2\theta{}} \tan{2\theta{}} \, d\theta}
-            \item \inline{\int{} \frac{\cos{\sqrt{t}}}{\sqrt{t}} \, dt}
-            \item \inline{\int{} \sqrt{x} \sin{(1 + x^{\frac{3}{2}})} \, dx}
-            \item \inline{\int{} \cos{\theta{}} \sin^6{\theta{}} \, d\theta{}}
-            \item \inline{\int{} {(1 + \tan{\theta})}^5 \sec^2{\theta{}} \, d\theta{}}
-            \item \inline{\int{} \frac{z^2}{\sqrt[3]{1 + z^3}} \, dz}
-            \item \inline{\int{} \frac{\cos{x}}{\sin^2{x}} \, dx}
-            \item \inline{\int{} \sqrt{\cot{x}} \csc^2{x} \, dx}
-            \item \inline{\int{} \frac{\cos{(\frac{\pi{}}{x})}}{x^2} \, dx}
-            \item \inline{\int{} \frac{dt}{\cos^2{t} \sqrt{1 + \tan{t}}}}
-            \item \inline{\int{} \sec^3{x} \tan{x} \, dx}
-            \item \inline{\int{} \sin{t} \sec^2{(\cos{t})} \, dt}
-            \item \inline{\int{} \frac{x^2}{\sqrt{1 \mins{} x}} \, dx}
-            \item \inline{\int{} \frac{x}{\sqrt[4]{x + 2}} \, dx}
-        \end{enumerate}
+        \follow\textbf{EXAMPLE 4.1.1.}
+        The order of the differential equation \inline{\frac{dy}{dx} = 2x} is one or that it's of the first-order.
+
+        \follow\textbf{EXAMPLE 4.1.2.}
+        The order of the differential equation \inline{\frac{dy}{dx} = \frac{2x^2}{3y^3}} is also of the first-order because the highest derivative we can find is the first derivative.
+
+        \follow\textbf{EXAMPLE 4.1.3}
+        The order of the differential equation \inline{\frac{d^2y}{dx^2} = 4x + 3} is of second-order.
     
-    \newpage\subsection*{Answer Key}
+    \subsection{Solution of a Differential Equation}
 
-        \begin{enumerate}
+        \enclose{
+            \textbf{DEFINITION.}
+            A function \textit{f} defined by \inline{y = f (x)} is a \hl{solution of a differential equation} if \textit{y} and its derivatives satisfy the differential equation.
+            The simplest form is \block{\frac{dy}{dx} = f (x)} where we read it as the first derivative of y with respect to x equals some function f of x.
+        }
 
-            \item \inline{\int{} x \sin{(x^2)} \, dx}
-            \begin{align*}
-                &= \int{} x \sin{(x^2)} \, dx               & u &= x^2 \\
-                &= \int{} \sin{u} (\frac{1}{2} \, du)       & du &= 2x \, dx \\
-                &= \mins{} \frac{1}{2} \cos{u} + C          & x \, dx &= \frac{1}{2} \, du \\
-                &= \mins{} \frac{1}{2} \cos{x^2} + C
-            \end{align*}
+        \follow\textbf{EXAMPLE 4.2.1.}
+        Write the general solution of the differential equation \inline{\frac{dy}{dx} = 2x}.
 
-            \item \inline{\int{} x^2 {(x^3 + 5)}^9 \, dx}
-            \begin{align*}
-                &= \int{} x^2 {(x^3 + 5)}^9 \, dx                   & u &= x^3 + 5 \\
-                &= \int{} u^9 (\frac{1}{3} du)                      & du &= 3x^2 \, dx \\
-                &= \frac{1}{3} \point{} \frac{1}{10} u^{10} + C     & x^2 \, dx &= \frac{1}{3} \, du \\
-                &= \frac{1}{30} {(x^3 + 5)}^{10} + C
-            \end{align*}
+        \begin{align*}
+            dy &= 2x \, dx \\
+            \int{} dy &= \int{} 2x \, dx \\
+            y + C_1 &= \left(\frac{2x^2}{2}\right) + C_2 \\
+            y + C_1 &= x^2 + C_2 \\
+            y &= x^2 + C_2 \mins{} C_1 \\
+            y &= x^2 + C
+        \end{align*}
 
-            \item \inline{\int{} {(3x \mins{} 2)}^{20} \, dx}
-            \item \inline{\int{} {(3t + 2)}^{2.4} \, dx}
-            \item \inline{\int{} (x + 1) \sqrt{2x + x^2} \, dx}
-            \item \inline{\int{} \frac{x}{{({x^2 + 1})}^2} \, dx}
-            \item \inline{\int{} \sin{\pi{} t} \, dt}
-            \item \inline{\int{} \frac{a + bx^2}{\sqrt{3ax + bx^3}} \, dx}
-            \item \inline{\int{} \sec{2\theta{}} \tan{2\theta{}} \, d\theta}
-            \item \inline{\int{} \frac{\cos{\sqrt{t}}}{\sqrt{t}} \, dt}
-            \item \inline{\int{} \sqrt{x} \sin{(1 + x^{\frac{3}{2}})} \, dx}
-            \item \inline{\int{} \cos{\theta{}} \sin^6{\theta{}} \, d\theta{}}
-            \item \inline{\int{} {(1 + \tan{\theta})}^5 \sec^2{\theta{}} \, d\theta{}}
-            \item \inline{\int{} \frac{z^2}{\sqrt[3]{1 + z^3}} \, dz}
-            \item \inline{\int{} \frac{\cos{x}}{\sin^2{x}} \, dx}
-            \item \inline{\int{} \sqrt{\cot{x}} \csc^2{x} \, dx}
-            \item \inline{\int{} \frac{\cos{(\frac{\pi{}}{x})}}{x^2} \, dx}
-            \item \inline{\int{} \frac{dt}{\cos^2{t} \sqrt{1 + \tan{t}}}}
-            \item \inline{\int{} \sec^3{x} \tan{x} \, dx}
-            \item \inline{\int{} \sin{t} \sec^2{(\cos{t})} \, dt}
-            \item \inline{\int{} \frac{x^2}{\sqrt{1 \mins{} x}} \, dx}
-            \item \inline{\int{} \frac{x}{\sqrt[4]{x + 2}} \, dx}
-        \end{enumerate}
+    \subsection{General Solution}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            If \inline{dy = f (x) \, dx}, then the \hl{complete or general solution} is given by \block{y = F (x) + C} provided that \inline{F (x)} is the antiderivative of \textit{f} (\inline{F' = f}).
+        }
+
+        \follow\enclose{
+            \textbf{DEFINITION.}
+            We call the constant \textit{C} as a parameter.
+            Therefore, the equation represents a family of functions depending on an arbitrary constant \textit{C} as is called a \hl{one-paramter family}.
+        }
+    
+    \subsection{Particular Solution}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            We show how to obtain a particular equation of a first-order differential equation when an \hl{initial condition} is given.
+        }
+
+        \follow\textbf{EXAMPLE 4.4.1.}
+        Find a particular solution of the differential equation \inline{\frac{dy}{dx} = 2x} for which \inline{y = 6} when \inline{x = 2}.
+
+        \begin{align*}
+            y &= x^2 + C \\
+            6 &= 2^2 + C \\
+            C &= 2
+        \end{align*}
+
+        \follow\textbf{NOTE.}
+        We define the equation \inline{y = x^2 + C} as the particular solution.
+
+    \subsection{Separable Differential Equation}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            This other form can be defined as a separable differential equation \block{\frac{dy}{dx} = \frac{g (x)}{h (y)}} because of the solution of \inline{\int{} h (y) \, dy = \int{} g (x) \, dx}.
+        }
+
+        \newpage\follow\textbf{EXAMPLE 4.5.1.}
+        Find the general solution of the differential equation \inline{\frac{dy}{dx} = \frac{2x^2}{3y^3}}.
+
+        \begin{align*}
+            \int{} 3y^3 \, dy &= \int{} 2x^2 \, dx \\
+            \frac{3y^4}{4} + C_1 &= \frac{2x^3}{3} + C_2 \\
+            \frac{3y^4}{4} &= \frac{2x^3}{3} + C_2 \mins{} C_1 \\
+            9y^4 &= 8x^3 + 12(C_2 \mins{} C_1) \\
+            9y^4 &= 8x^3 + C
+        \end{align*}
+
+        \follow\textbf{EXAMPLE 4.5.2.}
+        Find the particular solution of the given differential equation \inline{\frac{dy}{dx} = \frac{2x^2}{3y^3}} for which \inline{y = 2} when \inline{x = -1}.
+
+        \begin{align*}
+            9y^4 &= 8x^3 + C \\
+            9 {(2)}^4 &= 8 {(-1)}^3 + C \\
+            144 &= -8 + C \\
+            C &= 152
+        \end{align*}
+
+        \follow\textbf{NOTE.}
+        The particulars solution is then \inline{9y^4 = 8x^3 + 152}.
+
+    \subsection{Second-Degree Differential Equation}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            It is two successive antidifferentiations that are necessary to solve the equation and \hl{two arbitrary constants} occur in the general solution.
+            It takes the form \block{\frac{d^2y}{dx^2} = f (x)} where the general solution represents a \hl{two-parameter family} of functions.
+        }
+
+        \newpage\follow\textbf{EXAMPLE 4.6.1.}
+        Find the complete or general solution of the differential equation \inline{\frac{d^2y}{dx^2} = 4x + 3}.
+
+        \begin{align*}
+            \frac{dy'}{dx} &= 4x + 3                                    & \frac{d^2y}{dx^2} &= \frac{d}{dx} \left(\frac{dy}{dx}\right) \\
+            dy' &= (4x + 3) \, dx                                       & \frac{dy}{dx} &= y' \\
+            \int{} dy' &= \int{} (4x + 3) \, dx                         && \\
+            y' &= 2x^2 + 3x \, + C_1                                    & y' + A &= 2x^2 + 3x + B \\
+            \frac{dy}{dx} &= 2x^2 + 3x + C_1                            & y' &= 2x^2 + 3x + B \mins{} A \\
+            dy &= \left(2x^2 + 3x + C_1\right) \, dx                    && \\
+            \int{} dy &= \int{} \left(2x^2 + 3x + C_1\right) \, dx      && \\
+            y &= \frac{2x^3}{3} + \frac{3x^2}{2} + C_1 x + C_2
+        \end{align*}
+
+        \follow\textbf{EXAMPLE 4.6.2.}
+        Find the particular solution of the differential equation \inline{\frac{d^2y}{dx^2} = 4x + 3} for which \inline{y = 2} and \inline{\frac{dy}{dx} = -3} when \inline{x = 1}.
+
+        \begin{align*}
+            \frac{dy}{dx} &= 2x^2 + 3x + C_1                            & y &= \frac{2x^3}{3} + \frac{3x^2}{2} + C_1 x + C_2 \\
+            -3 &= 2 {(1)}^2 + 3 (1) + C_1                               & y &= \frac{2{(1)}^3}{3} + \frac{3{(1)}^2}{2} + (-8) (1) + C_2 \\
+            C_1 &= -8                                                   & y &= \frac{47}{6}
+        \end{align*}
+
+        \follow\textbf{NOTE.}
+        The particular solution is \inline{\frac{2x^3}{3} + \frac{3x^2}{2} -8x + \frac{47}{6}}.
 
 \end{document}
