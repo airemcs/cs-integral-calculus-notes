@@ -331,7 +331,64 @@
 
 \newpage\section{Separable Differential Equations}
     \begin{enumerate}
-        \item 
+        \item Find the complete solution of the differential equation.
+        \numbers{
+            \item \inline{\frac{dy}{dx} = 4x -5}
+            \item \inline{\frac{dy}{dx} = 6 -3x^2}
+            \item \inline{\frac{dy}{dx} = 3x^2 + 2x -7}
+            \item \inline{\frac{ds}{dt} = 5 \sqrt{s}}
+            \item \inline{\frac{dy}{dx} = 3xy^2}
+            \item \inline{\frac{dy}{dx} = \frac{\sqrt{x} + x}{\sqrt{y} -y}}
+            \item \inline{\frac{du}{dv} = \frac{3v \sqrt{1 + u^2}}{u}}
+            \item \inline{\frac{dy}{dx} = \frac{x^2 \sqrt{x^3 -3}}{y^2}}
+            \item \inline{\frac{dy}{dx} = \frac{\sec^2x}{\tan^2y}}
+            \item \inline{\frac{du}{dv} = \frac{\cos{2v}}{\sin{3u}}}
+            \item \inline{\frac{d^2y}{dx^2} = 5x^2 + 1}
+            \item \inline{\frac{d^2y}{dx^2} = \sqrt{2x -3}}
+            \item \inline{\frac{d^2s}{dt^2} = \sin{3t} + \cos{3t}}
+            \item \inline{\frac{d^2u}{dv^2} = \tan{v} \sec^2{v}}
+        }
+
+        \item Find the particular solution of the differential equation determined by the initial conditions.
+        \numbers{
+            \item \inline{\frac{dy}{dx} = x^2 -2x -4}; \inline{y = -6} when \inline{x = 3}
+            \item \inline{\frac{dy}{dx} = (x + 1) (x + 2)}; \inline{y = -\frac{3}{2}} when \inline{x = -3}
+            \item \inline{\frac{dy}{dx} = \frac{\cos{3x}}{\sin{2y}}}; \inline{y = \frac{\pi{}}{3}} when \inline{x = \frac{\pi{}}{2}}
+            \item \inline{\frac{ds}{dt} = \cos{\left(\frac{t}{2}\right)}}; \inline{s = 3} when \inline{t = \frac{\pi{}}{3}}
+            \item \inline{\frac{d^2u}{dv^2} = 4 {(1 + 3v)}^2}; \inline{u = -1} and \inline{\frac{du}{dv} = -2} when \inline{v = -1}
+            \item \inline{\frac{d^2y}{dx^2} = -\frac{3}{x^4}}; \inline{y = \frac{1}{2}} and \inline{\frac{dy}{dx} = -1} when \inline{x = 1}
+        }
+    \end{enumerate}
+
+\newpage\subsection*{Answer Key}
+    \begin{enumerate}
+        \item Find the complete solution of the differential equation.
+        \numbers{
+            \item \inline{y = 2x^2 -5x + C}
+            \item \inline{y = 6x -x^3 + C}
+            \item \inline{y = x^3 + x^2 -7x + C}
+            \item \inline{s = {\left(\frac{5t + C}{2}\right)}^2}
+            \item \inline{y = \frac{-2}{3x^2 + C}}
+            \item \inline{\frac{2}{3} y^{3/2} -\frac{1}{2} y^2 = \frac{2}{3} x^{3/2} + \frac{1}{2} x^2 + C}
+            \item \inline{2 \sqrt{1 + u^2} = 3v^2 + C}
+            \item \inline{y = {\left[\frac{2}{3} {(x^3 -3)}^{3/2} + C\right]}^{1/3}}
+            \item \inline{\tan{y} -y = \tan{x} + C}
+            \item \inline{-\frac{1}{3} \cos{3u} = \frac{1}{2} \sin{2v} + C}
+            \item \inline{y = \frac{5}{12} x^4 + \frac{1}{2} x^2 + C_1 x + C_2}
+            \item \inline{y = \frac{1}{15} {(2x -3)}^{5/2} + C_1 x + C_2}
+            \item \inline{s = -\frac{1}{9}\sin{3t} -\frac{1}{9}\cos{3t} + C_1 t + C_2}
+            \item \inline{u = \frac{1}{2} \tan{v} + C_1 v + C_2}
+        }
+
+        \item Find the particular solution of the differential equation determined by the initial conditions.
+        \numbers{
+            \item \inline{y = \frac{1}{3} x^3 -x^2 -4x + 6}
+            \item \inline{y = \frac{1}{3} x^3 + \frac{3}{2} x^2 + 2x}
+            \item \inline{\cos{2y} = -\frac{2}{3} \sin{3x} -\frac{7}{6}}
+            \item \inline{s = 2\sin{\left(\frac{t}{2}\right)} + 2}
+            \item \inline{u = 3v^4 + 4v^3 + 2v^2 + 2v}
+            \item \inline{y = -\frac{1}{2}x^{-2} -2x + 3}
+        }
     \end{enumerate}
 
 \end{document}
