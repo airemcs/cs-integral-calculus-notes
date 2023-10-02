@@ -15,7 +15,7 @@
 \graphicspath{ {./images/} }
 \sethlcolor{yellow}
 
-\newcommand{\class}{Integral Calculus for Computer Science Students}
+\newcommand{\class}{Application of Definite Integrals}
 \newcommand{\datewritten}{Term 1, Fall '23}
 \newcommand{\instructor}{Course Instructor: Noel T. Fortun}
 \newcommand{\notes}{A.L. Maagma}
@@ -50,8 +50,74 @@
 \end{tabular*}\\
 \rule[2ex]{\textwidth}{2pt}
 
-% ------------- Topic: Differentials -------------
+% --------------------- Body ---------------------
 
+\noindent\section{Area of a Plane Region}
 
+    \enclose{
+        \textbf{DEFINITION.}
+        It is using integrals to find areas of regions that lie between the graphs of two functions.
+
+        \bigskip\textbf{RECALL.}
+        The \hl{definite integral} generalizes the concept of the \hl{area under a curve}.
+        If \textit{f} is \hl{continuous and non-negative} on \inline{[a, b]}, then the \hl{area under the graph of \textit{f}} from \inline{x = a} to \inline{x = b} is given by the integral of \textit{f} from \inline{x = a} to \inline{x = b}.
+        \block{\text{Area of S =} \int_{a}^{b} f (x) \, dx}
+    }
+    
+    \follow\textbf{EXAMPLE 1.0.1.}
+    Find the area of the region bounded by the parabola \inline{y = 10 \mins{} x^2}, \textit{x}-axis, \textit{y}-axis, and \inline{x = 2}.
+
+    \subsection{Area of Plane Region Between 2 Curves}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            If \textit{f} and \textit{g} continuous functions on \inline{[a, b]} and \inline{f (x) \geq{} g (x)} for all \inline{x \in{} [a, b]}, then the \hl{area \textit{A} of the region} bounded by the curves \inline{y = f (x)}, \inline{y = g (x)}, and the lines \inline{x = a} and \inline{x = b} is given by the definite integral \block{A = \int_{a}^{b} [f (x) \mins{} g (x)] \, dx}
+        
+            \follow\textbf{NOTE.}
+            The formula provided on the left equates to an approximate, while the formula on the right equates to the exact area of an area.
+            \proving{
+                & \sum_{i = 1}^{n} f (x_{i}^{*}) \triangle{x}   &&= \lim_{n \rightarrow{} \infty{}} f (x_{i}^{*}) \triangle{x} \\
+                &                                               &&= \int_{a}^{b} f (x) \, dx
+            }
+        }
+
+        \newpage\follow\textbf{EXAMPLE 1.1.1}
+        Find the area bounded above by \inline{y = 2x + 5} and bounded below by \inline{y = x^3} on [0, 2].
+        \proving{
+            A   &= \int_{a}^{b} [f (x) \mins{} g (x)] \, dx \\
+                &= \int_{a}^{b} 2x + 5 \mins{} x^3 \, dx \\
+                &= {\left[ x^2 + 5x \mins{} \frac{x^4}{4} \right]}_{0}^{2} \\
+                &= 4 + 10 \mins{} 4 \mins{} 0 \\
+                &= 10
+        }
+        
+        \follow\textbf{EXAMPLE 1.1.2.}
+        Find the area of the region bounded above by the parabola \inline{y = 9 \mins{} x^2} and the line \inline{y = 2x + 1}.
+        \proving{
+            &= \int_{\mins{} 4}^{2} (9 \mins{} x^2 \mins{} 2x \mins{} 1) \, dx \\
+            &= {\left[ 9x \mins{} \frac{x^3}{3} \mins{} x^2 \mins{} x \right]}_{\mins{} 4}^{2} \\
+            &= 36
+        }
+
+        \follow\textbf{EXAMPLE 1.1.3.}
+        Find the area of the region bounded by the parabolas \inline{y = x^2} and \inline{y = \mins{} x^2 + 4x}.
+        \proving{
+            x^2 &= \mins{} x^2 + 4x     & 1 &= \mins{} 1 + 4    & &= \int_{0}^{2} (\mins{} x^2 + 4x \mins{} x^2) \, dx \\
+            2x^2 &= 4x                  & 1 &= 3                & &= \int_{0}^{2} (\mins{} 2x^2 + 4x) \, dx \\
+            x &= 2, 0                   &&                      & &= {\left[ \mins{} \frac{2x^3}{3} + 2x^2 \right]}_{0}^{2} \\
+            &                           &&                      & &= \mins{} \frac{16}{3} + 8 \\
+            &                           &&                      & &= \frac{8}{3}
+        }
+
+        \follow\textbf{NOTE.}
+        When selecting for a value of substituting, the values of \textit{x} must be between only those calculated.
+
+        \newpage\textbf{EXAMPLE 1.1.3.}
+        Find the area bounded by \inline{y = x^3} and \inline{y = x}.
+        \proving{
+            x^3 &= x            \\
+            x^2 &= 1            \\
+            x &= \pm{} 1, 0
+        }
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.5)  29 SEP 2023 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.5)  2 OCT 2023 19:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,24 +337,24 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Airel/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.aux)
+{C:/Users/Airel/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] (main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4686 strings out of 475248
- 71012 string characters out of 5757814
- 1918801 words of memory out of 5000000
- 26148 multiletter control sequences out of 15000+600000
- 563334 words of font info for 56 fonts, out of 8000000 for 9000
+ 4697 strings out of 475248
+ 71224 string characters out of 5757814
+ 1931801 words of memory out of 5000000
+ 26157 multiletter control sequences out of 15000+600000
+ 564892 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,311b,131s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-Output written on main.pdf (1 page, 15457 bytes).
+ 57i,12n,65p,490b,256s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Airel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (3 pages, 107808 bytes).
 PDF statistics:
- 11 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
