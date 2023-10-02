@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor, color, soul}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+
+\graphicspath{ {./images/} }
+\sethlcolor{yellow}
+
+\newcommand{\class}{Integral Calculus for Computer Science Students}
+\newcommand{\datewritten}{Term 1, Fall '23}
+\newcommand{\instructor}{Course Instructor: Noel T. Fortun}
+\newcommand{\notes}{A.L. Maagma}
+\newcommand{\follow}{\bigskip\noindent}
+\newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\mins}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
+
+% ---------------- Start Document ----------------
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+% -------------------- Header --------------------
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+    \textbf{\class} && \textbf{Date: \datewritten} \\
+    \textbf{\instructor} && \textbf{Notes: \notes} \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+% ------------- Topic: Differentials -------------
+
+
+
+\end{document}

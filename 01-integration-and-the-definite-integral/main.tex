@@ -8,7 +8,11 @@
 \usepackage{amsmath}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{blindtext}
 
+\graphicspath{ {./images/} }
 \sethlcolor{yellow}
 
 \newcommand{\class}{Integral Calculus for Computer Science Students}
@@ -474,7 +478,7 @@
         \follow\enclose{
             \textbf{DEFINITION.}
             We call the constant \textit{C} as a parameter.
-            Therefore, the equation represents a family of functions depending on an arbitrary constant \textit{C} as is called a \hl{one-paramter family}.
+            Therefore, the equation represents a family of functions depending on an arbitrary constant \textit{C} is called a \hl{one-paramter family}.
         }
     
     \subsection{Particular Solution}
@@ -560,5 +564,158 @@
 
         \follow\textbf{NOTE.}
         The particular solution is \inline{\frac{2x^3}{3} + \frac{3x^2}{2} -8x + \frac{47}{6}}.
+
+\newpage\section{The Definite Integral}
+
+    \enclose{
+        \textbf{DEFINE.}
+        If \textit{f} is a function defined for \inline{a \leq{} x \leq{} b}, we divide the interval \inline{[a, b]} into \textit{n} subintervals of equal width \inline{\triangle{} x = \frac{(b -a)}{n}}.
+        We let \inline{x_0} (= \textit{a}), \inline{x_1}, \inline{x_2}, \ldots{}, \inline{x_n} (= \textit{b}) be the endpoints of these subintervals and we let \inline{x^*_1}, \inline{x^*_2}, \ldots{}, \inline{x^*_n} be any \hl{sample points} in these subintervals, so \inline{x^*_i} lies in the \textit{i}th subinterval [\inline{x_{i-1}}, \inline{x_i}]; then the \hl{definite integral of \textit{f} from \textit{a} to \textit{b}} is \block{\int{}_a^b \, f (x) \, dx = \lim_{n \rightarrow{} \, \infty{}} \sum_{i = 1}^n \, f (x_i^*) \, \triangle{} x} provided that this limit exists. If it does exist, we can say that \textit{f} is \hl{integrable} on \inline{[a, b]}.
+    }
+
+    \subsection{The Area Problem}
+
+    \begin{figure}[h]
+        \includegraphics[scale=0.5]{images/area}
+        \centering
+    \end{figure}
+
+    \noindent\enclose{
+        \textbf{DEFINE.}
+        We begin by attempting to solve the area problem. 
+        Find the area of the region \textit{S} that lies under the curve \inline{y = f (x)} from \textit{a} to \textit{b}.
+        This means that \textit{S}, illustrated here, is bounded by:
+        \begin{itemize}
+            \item[-] The graph of a continuous function \textit{f} where \inline{f (x) \leq{} 0}.
+            \item[-] The vertical lines \inline{x = a} and \inline{x = b}. 
+            \item[-] The \textit{x}-axis.
+        \end{itemize}
+
+        \textbf{NOTE.}
+        The goal is to use \hl{limit} in trying to find the area under a curve.
+        However, it isn't so easy to find the area of a region with curved sides.
+        Hence, a part of the area problem is to make this intuitive idea precise by giving an \hl{exact definition of area}.
+
+        \bigskip\textbf{PLAN.}
+        We first approximate the region \textit{S} by rectangles and then we take the \hl{limit of the sum and the areas of these rectangles} as we increase the number of rectangles.
+    }
+
+    \newpage\textbf{EXAMPLE 5.1.0.}
+    
+    \begin{figure}[h]
+        \includegraphics[scale=0.5]{images/area01}
+        \centering
+    \end{figure}
+
+    \begin{itemize}
+        \item[-] 
+        Use rectangles to estimate the area under the parabola \inline{y = x^2} from 0 to 1, the parabolic region \textit{S} illustrated above.
+        We first notice that the area of \textit{S} must be somewhere between 0 and 1, because \textit{S} is contained in a square with side length 1.
+        Do suppose we divide \textit{S} into four strips: \inline{S_1}, \inline{S_2}, \inline{S_3}, and \inline{S_4} by drawing the vertical lines \textit{x} = 1/4, \textit{x} = 1/2, \textit{x} = 3/4.
+        \item[-] 
+        The heights of these rectangles are the values of the function \inline{f (x) = x^2} at the right endpoints of the subintervals [0, 1/4], [1/4, 1/2], [1/2, 3/4], and [3/4, 1].
+        Hence, if we let \inline{R_4} be the sum of the areas of these approximating rectangles, we get:
+        \proving{
+            R_4 &= \frac{1}{4} \point{} {\left(\frac{1}{4}\right)}^2 + \frac{1}{4} \point{} {\left(\frac{1}{2}\right)}^2 + \frac{1}{4} \point{} {\left(\frac{3}{4}\right)}^2 + \frac{1}{4} \point{} 1^2 \\
+            &= \frac{15}{32} \\
+            &= 0.46875
+        }
+        \inline{\therefore{}} The area \textit{A} of \textit{S} is less than \inline{R_4}; so, \textit{A} \textless{} 0.46875.
+        \item[-]
+        We could use the smaller rectangles by taking the height as values of \textit{f} at the left endpoints of the subintervals.
+        Hence, the sum of the areas of these approximating rectangles is:
+        \proving{
+            L_4 &= \frac{1}{4} \point{} {0}^2 + \frac{1}{4} \point{} {\left(\frac{1}{4}\right)}^2 + \frac{1}{4} \point{} {\left(\frac{1}{2}\right)}^2 + \frac{1}{4} \point{} {\left(\frac{3}{4}\right)}^2 \\
+            &= \frac{7}{32} \\
+            &= 0.21875
+        }
+        \inline{\therefore{}} We conclude that the lower and upper estimates of \textit{A}: \inline{0.21875 < A < 0.46875}.
+        \item[-] As we increase the number of rectangles, denoted as \textit{n}, \textit{R} and \textit{L} approaches a certain value; in this case, 1/3.
+    \end{itemize}
+
+    \newpage\follow\enclose{
+        \textbf{DEFINE.}
+        Hence, we define the exact area to be \hl{the limit of the sums of the areas of the approximating rectangles}, that is, \block{A = \lim_{n \rightarrow{} \infty{}} R_n = \lim_{n \rightarrow{} \infty{}} L_n = \frac{1}{3}}
+    }
+
+    \follow\enclose{
+        \textbf{DEFINE.}
+        The area \textit{A} of the region \textit{S} that lies under the graph of the continuous function \textit{f} is the limit of the \hl{sum of the areas of approximating rectangles} such that \block{A = \lim_{n \rightarrow{} \infty{}} R_n = \lim_{n \rightarrow{} \infty{}} \left[f (x_1) \triangle{x} + f (x_2) \triangle{x} + \ldots{} + f (x_n) \triangle{x}\right] = \lim_{n \rightarrow{} \infty{}} \sum_{i = 1}^n f (x_i^*) \triangle{x}}
+    }
+
+    \follow\enclose{       
+        \textbf{DEFINE.}
+        In the mathematical notation, \block{\int_{a}^{b} f (x) \, dx} where
+        \begin{conditions}
+            f (x) & Integrand \\
+            a & Lower Limit \\
+            b & Upper Limit
+        \end{conditions}
+        \textbf{NOTE.}
+        The symbol \inline{\int{}} was introduced by Leibniz and is called an integral sign.
+    }
+
+    \follow\textbf{EXAMPLE 5.1.1.}
+    Through interpreting it as the measure of the area of a plane region, compute the value of the intergral:
+    \proving{
+        \int_{0}^{3} x \, dx &= \frac{1}{2} (3) (3)     & Area &= \frac{1}{2} \, bh \\
+        &= \frac{9}{2}
+    }
+
+    \follow\textbf{EXAMPLE 5.1.2.}
+    Compute the value of the integral:
+    \proving{
+        \int_{-3}^{3} \sqrt{9 -x^2} \, dx &= \frac{1}{2} \pi{} {(3)}^2  & Area &= \frac{1}{2} \pi{} r^2 \\
+        &= \frac{9 \pi{}}{2}
+    }
+
+\newpage\section{The Fundamental Theorem of the Calculus}
+
+    
+    \enclose{
+        \textbf{DEFINE.}
+        The first fundamental theorem of calculus ties the idea of \hl{derivative} and the concept of \hl{definite integral}.
+        This theorem defines the derivative of a function that is a definite integral having a variable upper limit.
+    }
+
+    \subsection{The First Fundamental Theorem of Calculus}
+
+        \enclose{
+            \textbf{DEFINE.}
+            Let \textit{f} be a continuous on the closed interval \inline{[a, b]} and let \textit{x} be a number in \inline{[a, b]}.
+            If \textit{g} is the function defined by \block{g (x) = \int_{a}^{x} f (t) \, dt} then \block{g ' (x) = f (x)} or equivalently, \block{\frac{d}{dx} \int_{a}^{x} f (t) \, dt = f (x)}.
+        }
+
+        \follow\textbf{EXAMPLE 6.1.1.}
+        Compute the following derivative \inline{\frac{d}{dx} \int_{\pi{}}^{x} \cot^2{t} \, dt}.
+        \proving{
+            &= \cot^2{x}
+        }
+
+        \follow\textbf{EXAMPLE 6.1.2.}
+        Compute the following derivative \inline{\frac{d}{dx} \int_{\pi{}}^{x^2} \cot^2{t} \, dt}.
+        \proving{
+            &= g' (x^2) \, \frac{d}{dx} \, (x^2)    & g (x) &= \int_{\pi{}}^{x} \cot^2{t} \, dt \\
+            &= \cot^2{(x^2)} \point{} 2x            & g' (x) &= \cot^2{x} \\
+            &= 2x \cot^2{(x^2)}
+        }
+
+        \follow\textbf{EXAMPLE 6.1.3.}
+        Compute the following derivative \inline{\frac{d}{dx} \int_{1}^{\sqrt{x}} \frac{s^2}{s^2 + 1} \, ds}.
+        \proving{
+            &= \frac{{(\sqrt{x})}^2}{{(\sqrt{x})}^2 + 1} \point{} \frac{d}{dx} (\sqrt{x})   & \frac{d}{dx} (x^{1/2}) &= \frac{1}{2} x^{-1/2} \\
+            &= \frac{x}{x + 1} \point{} \frac{1}{2\sqrt{x}}                                 & &= \frac{1}{2\sqrt{x}}
+        }
+
+        \newpage\follow\textbf{EXAMPLE 6.1.4.}
+        Compute the following derivative \inline{\frac{d}{dx} \int_{x}^{2} \left[\cos{} (t^2) + t \right] \, dt}.
+        \proving{
+            &= \frac{d}{dx} \Big[-\int_{2}^{x} [\cos{} (t^2) + t] \, dt\Big] \\
+            &= -\frac{d}{dx} \int_{2}^{x} [\cos{} (t^2) + t] \, dt \\
+            &= -[\cos{} (x^2) + x]
+        }
+
+        \follow\textbf{EXAMPLE 6.1.5.}
+        Compute the following derivative \inline{\frac{d}{dx} \int_{\tan{x}}^{x^2} \frac{1}{\sqrt{2 + t^4}} \, dt}.
 
 \end{document}
