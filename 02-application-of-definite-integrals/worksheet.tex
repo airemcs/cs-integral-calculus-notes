@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor, color, soul}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+
+\sethlcolor{yellow}
+
+\newcommand{\class}{Integral Calculus for Computer Science Students}
+\newcommand{\datewritten}{Term 1, Fall '23}
+\newcommand{\instructor}{Course Instructor: Noel T. Fortun}
+\newcommand{\notes}{A.L. Maagma}
+\newcommand{\follow}{\bigskip\noindent}
+\newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\mins}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
+
+% ---------------- Start Document ----------------
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+% -------------------- Header --------------------
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+    \textbf{\class} && \textbf{Date: \datewritten} \\
+    \textbf{\instructor} && \textbf{Notes: \notes} \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+% ------------- Topic: Differentials -------------
+
+\section{Finding the Area Between Two Curves}
+    \begin{enumerate}
+        \item Find the area bounded by \inline{y = 5x \mins{} x^2} and \inline{y = x}.
+        \item Find the area bounded by \inline{x = y^2 \mins{} 4y} and \inline{x = 2y \mins{} y^2}.
+        \item Sketch the region enclosed by the given curves. Decide whether to integrate with respect to x or y. Draw a typical approximating rectangle, then find the area of the region.
+        \numbers{
+            \item \inline{y = x + 1}, \inline{y = 9 \mins{} x^2}, \inline{x = \mins{} 1}, \inline{x = 2}
+            \item \inline{y = x}, \inline{y = x^2}
+            \item \inline{y = x^2 \mins{} 2x}, \inline{y = x + 4}
+            \item \inline{y = x^2}, \inline{y^2 = x}
+            \item \inline{y = x^2}, \inline{y = 4x \mins{} x^2}
+            \item \inline{y = 12 \mins{} x^2}, \inline{y = x^2 \mins{} 6}
+            \item \inline{y = 8 \mins{} x^2}, \inline{y = x^2}, \inline{x = \mins{} 3}, \inline{x = 3}
+            \item \inline{x = 2y^2}, \inline{x = 4 + y^2}
+            \item \inline{4x + y^2 = 12}, \inline{x = y}
+            \item \inline{y = |x|}, \inline{y = x^2 \mins{} 2}
+        }
+        \item Find the area of the region enclosed by the curves.
+        \numbers{
+            \item \inline{y = 2x \mins{} 8x + 10}, \inline{y = \frac{x^2}{2} \mins{} 2x \mins{} 1}, \inline{x = 1}, \inline{x = 3}
+            \item \inline{x = 2y^2 + 12y + 19}, \inline{x = \mins{} \frac{y^2}{2} \mins{} 4y \mins{} 10}, \inline{y = \mins{} 3}, \inline{y = \mins{} 2}
+            \item \inline{y = \frac{x^2}{2} \mins{} 3x \mins{} \frac{1}{2}}, \inline{y = 3}
+            \item \inline{y = \mins{} \frac{x^3}{2} + 2x^2}, \inline{y = \mins{} x^2 + 4x}
+        }
+    \end{enumerate}
+
+\end{document}
