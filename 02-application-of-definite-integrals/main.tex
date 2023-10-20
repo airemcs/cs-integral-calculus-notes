@@ -122,8 +122,155 @@
 
         \follow\textbf{EXAMPLE 1.1.4.}
         Find the area bounded by \inline{x = y^2} and \inline{y = x \mins{} 2}.
+        \proving{
+            x &= y^2            & y &= x \mins{} 2          & &= \int_{c}^{d} \left[ f (y) \mins{} g (y) \right] \, dy \\
+            g (y) &= y^2        & y + 2 &= x                & &= \int_{-1}^{2} \left(y + 2 \mins{} y^2 \right) \, dy \\
+            &                   & y + 2 &= f (y)            & &= {\left[\frac{y^2}{2} + 2y \mins{} \frac{y^3}{3}\right]}_{-1}^{2} \\
+            &                   &&                          & &= \frac{9}{2}
+        }
+
+        \follow\textbf{NOTE.}
+        There are some regions wherein they are best treated by regarding \textit{x} as a function of \textit{y}.
         
         \follow\textbf{EXAMPLE 1.1.5.}
         Find the area bounded by \inline{x = 2y^2} and \inline{x = 4 + y^2}. You must decide whether to integrate with respect to \textit{x} or \textit{y}.
+        \proving{
+            2y^2 &= 4 + y^2         & 0 &= 4 + 0            & &= \int_{c}^{d} \left[f (y) \mins{} g (y) \right] \, dy \\
+            y^2 &= 4                & 0 &= 4                & &= \int_{-2}^{2} \left[4 + y^2 \mins{} 2y^2 \right] \, dy \\
+            y &= \pm{} 2            &&                      & &= \int_{-2}^{2} \left(4 \mins{} y^2 \right) \, dy \\
+            &                       &&                      & &= \frac{32}{3}
+        }
+
+        \follow\textbf{EXAMPLE 1.1.6.}
+        Find the area bounded by \inline{x = y^3} and \inline{x = \mins{} 3y^2 + 4}.
+        \proving{
+            y^3 &= \mins{} 3y^2 + 4                         & &= \int_{-2}^{1} \left[ \mins{} 3y^2 + 4 \mins{} y^3 \right] \, dy \\
+            y^3 + 3y^2 \mins{} 4 &= 0 \\
+            (y \mins{} 1) (y + 2) (y + 2) &= 0 \\
+            y &= 1, \mins{} 2
+        }
+
+        \newpage\follow\textbf{EXAMPLE 1.1.7.}
+        Find the area bound by \inline{y = 5x \mins{} x^2} and \inline{y = x}.
+        \proving{
+            5x \mins{} x^2 &= x                             & &= \int_{0}^{4} (5x \mins{} x^2 \mins{} x) \, dx \\
+            x^2 + x \mins{} 5x &= 0                         & &= \int_{0}^{4} (4x \mins{} x^2) \, dx \\
+            x^2 \mins{} 4x &= 0                             & &= {\left[ 2x^2 \mins{} \frac{x^3}{3} \right]}_{0}^{4} \\
+            x (x \mins{} 4) &= 0                            & &= 2 (4)^2 \mins{} \frac{(4)^3}{3} \\
+            x &= 0, 4                                       & &= 32 \mins{} \frac{64}{3} \\
+            &                                               & &= \frac{32}{3}
+        }
+
+        \follow\textbf{EXAMPLE 1.1.8.}
+        Find the area bound by \inline{x = y^2 \mins{} 4y} and \inline{x = 2y \mins{} y^2}.
+        \proving{
+            y^2 \mins{} 4y &= 2y \mins{} y^2                & &= \int_{0}^{3} (2y \mins{} y^2 \mins{} y^2 + 4y) \, dy \\
+            2y^2 \mins{} 6y &= 0                            & &= \int_{0}^{3} (6y \mins{} 2y^2) \, dy \\
+            y^2 \mins{} 3y &= 0                             & &= {\left[ 3y^2 \mins{} \frac{2y^3}{3} \right]}_{0}^{3} \\
+            y (y \mins{} 3) &= 0                            & &= 3 (3)^2 \mins{} \frac{2 (3)^3}{3} \\
+            y &= 0, 3                                       & &= 9
+        }
+
+\noindent\section{Volumes of Solids of Revolution}
+
+    \enclose{
+        \textbf{DEFINITION}
+        It is using integration to find out the volume of a \hl{solid of revolution}.
+        We have an intuitive idea of what volume means.
+        In calculus, we make this idea precise to give an exact definition of volume.
+    }
+
+    \subsection{Solid of Revolution}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            It is a solid obtained by revolving a plane region about a fixed line called the \hl{axis of revolution}.
+        }
+    
+    \subsection{Disk Method}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            Let \textit{f} be continuous with \inline{f (x) \geq{} 0} on the interval \inline{[a, b]}.
+            If the region \textit{R} bounded by the graph of \textit{f}, the \textit{x}-axis, and the lines \inline{x = a} and \inline{x = b} is \hl{revolved around the \textit{x}-axis}, the volume of the resulting solid is \block{V = \int_{a}^{b} \pi{} f (x)^2 \, dx = \pi{} \int_{a}^{b} f (x)^2 \, dx}
+            Additionally, the set-up goes:
+            \begin{itemize}
+                \setlength\itemsep{0em}
+                \item[-] For a solid \textit{S} that isn't a cylinder, we first ``cut'' \textit{S} into pieces and approximate each piece by a thin cylinder or disk.
+                \item[-] We estimate the volume of \textit{S} by adding the volumes of the disk.
+                \item[-] We arrive at the exact volume of \textit{S} through a \hl{limiting process} in which the number of pieces become large.
+            \end{itemize}
+        }
+
+        \follow\textbf{EXAMPLE 2.2.1.}
+        Given that the axis of revolution is x-axis, find the volume of the solid obtained by rotating about the \textit{x}-axis of the region under the curve \inline{y = \sqrt{x}} from 0 to 1.I
+        Illustrate the definition of volume by sketching a typical approximating cylinder.
+        \proving{
+            V &= \int_{a}^{b} A (x) \, dx \\
+            &= \int_{0}^{1} \pi{} (\sqrt{x})^2 \, dx \\
+            &= \pi{} \int_{0}^{1} x \, dx \\
+            &= \pi{} {\left[ \frac{x^2}{2} \right]}_{0}^{1} \\
+            &= \frac{\pi{}}{2}
+        }
+
+        \follow\textbf{EXAMPLE 2.2.2.}
+        Given that it is rotated around the \textit{x}-axis, write the integral that would be used to find the volume of the region bounded by \inline{x = -1}, \inline{x = 2}, \inline{y = 0}, and \inline{y = \frac{1}{2} x^2 + 2}.
+        \proving{
+            V &= \int_{a}^{b} \pi{} f (x)^2 \, dx \\
+            &= \pi{} \int_{-1}^{2} {(\frac{1}{2} x^2 + 2)}^2 \, dx \\
+            &= \pi{} \int_{-1}^{2} {\left(\frac{1}{2} x^2 + 2 \right)}^2 \, dx
+        }
+
+        \newpage\follow\textbf{EXAMPLE 2.2.3.}
+        Given that the axis of revolution is not a coordinate axis, find the volume of the solid when the region bounded by \inline{f (x) = 2 \mins{} x^2} and \inline{g (x) = 1} is revolved about the line \inline{y = 1}.
+        \proving{
+            V &= \pi{} \int_{-1}^{1} {(1 \mins{} x^2)}^2 \, dx \\
+            &= \pi{} \int_{-1}^{1} (1 \mins{} 2x^2 + x^4) \, dx \\
+            &= \pi{} {\left[ x \mins{} \frac{2x^3}{3} + \frac{x^5}{5} \right]}_{-1}^{1} \\
+            &= \frac{16 \pi{}}{15}
+        }
+
+        \follow\textbf{EXAMPLE 2.2.4.}
+        Given that the axis of revolution is \textit{y}-axis, find the volume of the solid obtained by rotating the region bounded by \inline{y = x^3}, \inline{y = 8}, and \inline{x = 0} about the \textit{y}-axis.
+        \proving{
+            V &= \int_{y_1}^{y_2} \pi{} f (y)^2 \, dy \\
+            &= \pi{} \int_{0}^{8} {(\sqrt[3]{y})}^2 \, dy \\
+            &= \pi{} \int_{0}^{8} y^{2/3} \, dy \\
+            &= \pi{} {\left[ \frac{y^{5/3}}{5/3} \right]}_{0}^{8} \\
+            &= \frac{3 \pi{}}{5} {\left[ y^{5/3} \right]}_{0}^{8} \\
+            &= \frac{96 \pi{}}{5}
+        }
+
+        \follow\textbf{EXAMPLE 2.2.5.}
+        Write the integral that would be used to find the volume of the solid obtained by revolving the region bounded by \inline{x = y^2 \mins{} 4}, \inline{x = 0}, and \inline{y = 0} about the \textit{y}-axis.
+        \proving{
+            r &= 0 \mins{} (y^2 \mins{} 4)          & A (y) &= \pi{} {(y^2 \mins{} 4)}^2 \\
+            r^2 &= {(y^2 \mins{} 4)}^2              & V &= \int_{y_1}^{y_2} A (y) \, dy \\
+            &                                       & &= \int_{0}^{2} \pi{} {(y^2 \mins{} 4)}^2 \, dy
+        }
+
+        \newpage\follow\textbf{EXAMPLE 2.2.6.}
+        Given that the axis of revolution is not the \textit{y}-axis, find the volume of the solid when the region bounded by \inline{x = y^2} and \inline{x = 1} is revolved about the line \inline{x = 1}.
+        \proving{
+            V &= \int_{-1}^{1} \pi{} {(1 \mins{} y^2)}^2 \, dy \\
+            &= \pi{} \int_{-1}^{1} (1 \mins{} 2y^2 + y^4) \, dy \\
+            &= \pi{} {\left[ y \mins{} \frac{2y^3}{3} + \frac{y^5}{5} \right]}_{-1}^{1} \\
+            &= \frac{16 \pi{}}{15}
+        }
+
+        \follow\enclose{
+            \textbf{DEFINITION.}
+            To find the volume of a solid of revolution with the disk method, use one of the formulas below.
+            \follow\begin{center}\begin{tabular}{ccc}
+                Horizontal Axis of Revolution && Vertical Axis of Revolution \\
+                \inline{V = \pi{} \int_{a}^{b} {[r (x)]}^2 \, dx} && \inline{V = \pi{} \int_{c}^{d} {[r (y)]}^2 \, dy} \\\\
+            \end{tabular}\end{center}
+            
+            \textbf{NOTE.}
+            You can determine the variable of integration by placing a representative rectangle in the plane region \hl{perpendicular} to the axis of revolution.
+            When the width of the rectangle is \inline{\triangle{x}} integrate with respect to \textit{x}, and when the width of the rectangle is \inline{\triangle{y}}, integrate with respect to \textit{y}.
+        }
+    
+    \subsection{}
 
 \end{document}

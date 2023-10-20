@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor, color, soul}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+
+\graphicspath{ {./images/} }
+\sethlcolor{yellow}
+
+\newcommand{\class}{Derivatives of Elementary Transcendental Functions}
+\newcommand{\datewritten}{Term 1, Fall '23}
+\newcommand{\instructor}{Course Instructor: Noel T. Fortun}
+\newcommand{\notes}{A.L. Maagma}
+\newcommand{\follow}{\bigskip\noindent}
+\newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\mins}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
+
+% ---------------- Start Document ----------------
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+% -------------------- Header --------------------
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+    \textbf{\class} && \textbf{Date: \datewritten} \\
+    \textbf{\instructor} && \textbf{Notes: \notes} \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+% --------------------- Body ---------------------
+
+\noindent\section{Derivatives of Elementary Transcendental Functions}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        In general, the term \hl{transcendental} means non-algebraic.
+        A transcendental function is a function that is not expressible as a finite combination of the algebraic opperations of addition, subtraction, multiplication, division, raising to a power, and extracting a root.
+        An example includes the function \inline{\log{x}}, \inline{\sin{x}}, \inline{\cos{x}}, \inline{e^x}, and any functions containing them.
+    }
+
+\follow\section{The Natural Logarithmic Function}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        The function defined by \block{f (x) = \log_{e}{x} = \ln{x}} \inline{(x > 0, e \approx{} 2.718281 \dots)} is called the \hl{natural logarithmic function}.
+        
+        \follow\textbf{NOTE.}
+        The equation \inline{y = \ln{x}} is equivalent to \inline{e^y = x}.
+    }
+
+    \follow\subsection{Logarithmic Properties}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            If \textit{a} and \textit{b} are positive numbers and \textit{n} is rational, then the following properties are true.
+            \begin{enumerate}
+                \setlength\itemsep{0em}
+                \item \inline{\ln{1} = 0}
+                \item \inline{\ln{(ab)} = \ln{a} + \ln{b}}
+                \item \inline{\ln{(a^n)} = n \ln{a}}
+                \item \inline{\ln{(\frac{a}{b})} = \ln{a} \mins{} \ln{b}}
+            \end{enumerate}
+        }
+    
+    \follow\subsection{Definition of the Natural Logarithmic Function}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            The natural logarithmic function is defined by \block{\ln{x} = \int_{1}^{x} \frac{1}{t} \, dt, x > 0}
+            The domain of the natural logarithmic function is the set of all positive real numbers.
+        }
+
+    \follow\subsection{Derivative of the Natural Logarithmic Function}
+
+        \enclose{
+            \textbf{DEFINITION.}
+            Let \textit{u} be a differentiable function of \textit{x}.
+            \begin{enumerate}
+                \setlength\itemsep{0em}
+                \item \inline{\frac{d}{dx} [\ln{x}] = \frac{1}{x}, x > 0}
+                \item \inline{\frac{d}{dx} [\ln{u}] = \frac{1}{u} \frac{du}{dx} = \frac{u'}{u}, u > 0}
+            \end{enumerate}
+        }
+
+        \follow\textbf{EXAMPLE 2.3.1.} 
+        Solve for the equation \inline{\frac{d}{dx} [\ln{2x}]}.
+
+        \follow\textbf{EXAMPLE 2.3.2.}
+        Solve for the equation \inline{\frac{d}{dx} [\ln{(x^2 + 1)}]}.
+
+        \follow\textbf{EXAMPLE 2.3.3.}
+        Solve for the equation \inline{\frac{d}{dx} [x \ln{x}]}.
+
+        \follow\textbf{EXAMPLE 2.3.4.}
+        Solve for the equation \inline{\frac{d}{dx} [{(\ln{x})}^3]}.
+
+        \follow\textbf{EXAMPLE 2.3.5.}
+        Solve for the equation \inline{y = \ln{[(4x^2 + 3) (2x \mins{} 1)]}}.
+
+        \follow\textbf{EXAMPLE 2.3.6.}
+        Solve for the equation \inline{y = \ln{\left(\frac{x}{x + 1}\right)}}.
+
+        \follow\textbf{EXAMPLE 2.3.7.}
+        By implicit differentiation, find the dy/dx of \inline{\ln{\frac{x}{y}} + xy = 1}.
+
+        \follow\textbf{EXAMPLE 2.3.8.}
+        Solve for the equation \inline{\ln{(x + y)} \mins{} \ln{(x \mins{} y)} = 4}.
+
+\follow\section{Logarithmic Differentiation}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        It is sometimes convenient to use logarithms as aids in differentiating non-logarithmic functions.
+        This procedure is called \hl{logarithmic differentiation}.
+        This process uses the properties of natural logarithm to simplify the work involved in differentiating complicated expressions containing products, quotients, and powers.
+    }
+
+    \follow\textbf{EXAMPLE 3.0.1.}
+    Solve for the equation \inline{y = \frac{{(\sin{x})}^2 {(x^3 + 1)}^4}{{(x + 3)}^8}}.
+
+    \follow\textbf{EXAMPLE 3.0.2.}
+    Solve for the equation \inline{y = x^3 \sqrt{5 \mins{} 9x}}.
+
+    \follow\textbf{EXAMPLE 3.0.3.}
+    Solve for the equation \inline{y = \frac{x^2 {(6 + 3x)}^4}{\sqrt[3]{9 \mins{} x^2}}}.
+
+    \follow\textbf{EXAMPLE 3.0.4.}
+    Solve for the equation \inline{y = x^{\sin{x}}}.
+
+    \follow\textbf{EXAMPLE 3.0.5.}
+    Solve for the equation \inline{y = \frac{\sqrt[3]{x + 1}}{(x + 2) \sqrt{x + 3}}}.
+
+    \follow\textbf{EXAMPLE 3.0.6.}
+    Solve for the equation \inline{y = \frac{{(x \mins{} 2)}^2}{\sqrt{x^2 + 1}}}.
+
+\end{document}
