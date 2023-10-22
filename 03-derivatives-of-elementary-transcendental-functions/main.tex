@@ -114,8 +114,8 @@
         \follow\textbf{EXAMPLE 2.3.2.}
         Solve for the equation \inline{\frac{d}{dx} [\ln{(x^2 + 1)}]}.
         \proving{
-            &= \frac{1}{u} \point{} \frac{du}{dx}               & u = x^2 + 1 \\
-            &= \frac{1}{x^2 + 1} \point{} \frac{2x dx}{dx}      & du = 2x \, dx \\
+            &= \frac{1}{u} \frac{du}{dx}               & u = x^2 + 1 \\
+            &= \frac{1}{x^2 + 1} \frac{2x dx}{dx}      & du = 2x \, dx \\
             &= \frac{2x}{x^2 + 1}
         }
 
@@ -144,28 +144,30 @@
         Solve for the equation \inline{y = \ln{\left(\frac{x}{x + 1}\right)}}.
         \proving{
             y &= \ln{(x) {(x + 1)}^{-1}} \\
-            y &= \ln{(x)} + \ln{(x + 1)}^{-1} \\
+            y &= \ln{(x)} \mins{} \ln{(x + 1)} \\
             \frac{dy}{dx} &= \frac{1}{x} \mins{} \frac{1}{x + 1}
         }
 
         \follow\textbf{EXAMPLE 2.3.7.}
         By implicit differentiation, find the dy/dx of \inline{\ln{(\frac{x}{y})} + xy = 1}.
         \proving{
-            \ln{(x)} \mins{} \ln{(y)} + xy &= 1                                                             & f (y) &= f (y (x)) \\
-            \frac{d}{dx} \left(\ln{(x)} \mins{} \ln{(y)} + xy\right) &= 1                                   & &= \ln{y} \\
-            \frac{1}{x} \mins{} \frac{1}{y} \point{} \frac{dy}{dx} + 1y + x \point{} \frac{dy}{dx} &= 0     & &= \ln{[y (x)]} \\
-            \frac{dy}{dx} \left(x \mins{} \frac{1}{y}\right) &= \mins{} y \mins{} \frac{1}{x}               & &= \frac{1}{y} \point{} y'
-            % \frac{y}{xy \mins{} 1} \left[\frac{dy}{dx}\left(\frac{xy \mins{} 1}{y}\right) &= \frac{\mins{} xy \mins{} 1}{x}\right] &= \frac{1}{y} \point{} \frac{dy}{dx}
+            \ln{(x)} \mins{} \ln{(y)} + xy &= 1                                                                     & f (y) &= f (y (x)) \\
+            \frac{d}{dx} \left(\ln{(x)} \mins{} \ln{(y)} + xy\right) &= 1                                           & &= \ln{y} \\
+            \frac{1}{x} \mins{} \frac{1}{y} \frac{dy}{dx} + y + x \frac{dy}{dx} &= 0                                & &= \ln{[y (x)]} \\
+            \frac{dy}{dx} \left(x \mins{} \frac{1}{y}\right) &= \mins{} y \mins{} \frac{1}{x}                       & &= \frac{1}{y} \point{} y' = \frac{1}{y} \frac{dy}{dx} \\
+            \frac{dy}{dx} &= \left(\frac{\mins{} xy \mins{} 1}{x}\right) \left(\frac{y}{xy \mins{} 1}\right) \\
+            \frac{dy}{dx} &= \frac{\mins{} xy^2 \mins{} y}{x^2y \mins{} x}
         }
 
         \follow\textbf{EXAMPLE 2.3.8.}
         Solve for the equation \inline{\ln{(x + y)} \mins{} \ln{(x \mins{} y)} = 4}.
-        \proving{
-            \frac{1}{x + y} \left(1 + \frac{dy}{dx}\right) \mins{} \frac{1}{x \mins{} y} \left(1 \mins{} \frac{dy}{dx}\right) &= 0 \\
-            \frac{1}{x + y} + \frac{dy}{(x + y) \, dx} \mins{} \frac{1}{x \mins{} y} + \frac{dy}{(x \mins{} y) \, dx} &= 0 \\
-            % check
-            \frac{dy}{dx} &= \frac{y}{x}
-        }
+        % \proving{
+        %     \frac{1}{x + y} \left(1 + \frac{dy}{dx}\right) \mins{} \frac{1}{x \mins{} y} \left(1 \mins{} \frac{dy}{dx}\right) &= 0 \\
+        %     \frac{1}{x + y} + \frac{1}{x + y} \frac{dy}{dx} \mins{} \frac{1}{x \mins{} y} + \frac{1}{x \mins{} y} \frac{dy}{dx} &= 0 \\
+        %     \frac{1}{x + y} \frac{dy}{dx} + \frac{1}{x \mins{} y} \frac{dy}{dx} &= \frac{1}{x \mins{} y} \mins{} \frac{1}{x + y} \\
+        %     \frac{dy}{dx} \left(\frac{1}{x + y} + \frac{1}{x \mins{} y}\right) &= \frac{1}{x \mins{} y} \mins{} \frac{1}{x + y} \\
+        %     \frac{dy}{dx} &= \frac{x^2 \mins{} y^2}{x \mins{} y} \mins{} \frac{x^2 \mins{} y^2}{x + y}
+        % }
 
 \follow\section{Logarithmic Differentiation}
 
@@ -179,11 +181,12 @@
     \follow\textbf{EXAMPLE 3.0.1.}
     Find the \inline{\frac{dy}{dx}} of the equation \inline{y = \frac{{(\sin{x})}^2 {(x^3 + 1)}^4}{{(x + 3)}^8}}.\
     \proving{
-        \ln{(y)} &= \ln{\left[ \frac{{(\sin{x})}^2 {(x^3 + 1)}^4}{{(x + 3)}^8} \right]} \\
-        \ln{(y)} &= 2 \ln{(\sin{x})} + 4 \ln{(x^3 + 1)} \mins{} 8 \ln{(x + 3)} \\
+        \ln{(y)} &= \ln{\left[\frac{{(\sin{x})}^2 {(x^3 + 1)}^4}{{(x + 3)}^8}\right]} \\
+        \ln{(y)} &= \ln{{(\sin{x})}^2} + \ln{{(x^3 + 1)}^4} \mins{} \ln{{(x + 3)}^8} \\
+        \ln{(y)} &= 2 \ln{(\sin{x})} + 4 \ln{{(x^3 + 1)}} \mins{} 8 \ln{(x + 3)} \\
         \frac{1}{y} \frac{dy}{dx} &= \frac{2 \cos{x}}{\sin{x}} + \frac{4 (3x^2)}{x^3 + 1} \mins{} \frac{8}{x + 3} \\
-        \frac{dy}{dx} &= y \left(2 \cot{x} + \frac{12x^2}{x^3 + 1} \mins{} \frac{8}{x + 3} \right) \\
-        \frac{dy}{dx} &= \frac{{(\sin{x})}^2 {(x^3 + 1)}^4}{{(x + 3)}^8} \left[ 2 \cot{x} + \frac{12x^2}{x^3 + 1} \mins{} \frac{8}{x \mins{} 3} \right]
+        \frac{dy}{dx} &= y \left[\frac{2 \cos{x}}{\sin{x}} + \frac{12x^2}{x^3 + 1} \mins{} \frac{8}{x + 3}\right] \\
+        \frac{dy}{dx} &= \frac{{(\sin{x})}^2 {(x^3 + 1)}^4}{{(x + 3)}^8} \left[ 2 \cot{x} + \frac{12x^2}{x^3 + 1} \mins{} \frac{8}{x + 3} \right]
     }
 
     \follow\textbf{NOTE.}
@@ -198,12 +201,12 @@
     \follow\textbf{EXAMPLE 3.0.4.}
     Solve for the equation \inline{y = x^{\sin{x}}}.
     \proving{
-        \ln{(y)} &= \ln{[x^{\sin{x}}]} \\
-        \ln{(y)} &= (\sin{x}) \ln{(x)} \\
+        \ln{(y)} &= \ln{(x^{\sin{x}})} \\
+        \ln{(y)} &= \sin{x} \ln{(x)} \\
         \frac{1}{y} \frac{dy}{dx} &= (\sin{x}) (\frac{1}{x}) + (\cos{x}) (\ln{x}) \\
-        \frac{1}{y} \frac{dy}{dx} &= \frac{\sin{x}}{x} + \cos{x} \ln{x} \\
-        \frac{dy}{dx} &= y \left[ \frac{\sin{x}}{x} + \cos{x} \ln{x} \right] \\
-        \frac{dy}{dx} &= x^{\sin{x}} \left[ \frac{\sin{x}}{x} + \cos{x} \ln{x} \right]
+        \frac{1}{y} \frac{dy}{dx} &= \frac{\sin{x}}{x} + \cos{x} \ln{(x)} \\
+        \frac{dy}{dx} &= y \left[\frac{\sin{x}}{x} + \cos{x} \ln{(x)}\right] \\
+        \frac{dy}{dx} &= x^{\sin{x}} \left[\frac{\sin{x}}{x} + \cos{x} \ln{(x)}\right]
     }
 
     \follow\textbf{EXAMPLE 3.0.5.}
