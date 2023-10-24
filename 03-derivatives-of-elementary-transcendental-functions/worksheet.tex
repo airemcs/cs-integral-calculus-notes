@@ -1,0 +1,269 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor, color, soul}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+
+\sethlcolor{yellow}
+
+\newcommand{\class}{Derivatives of Elementary Transcendental Functions}
+\newcommand{\datewritten}{Term 1, Fall '23}
+\newcommand{\instructor}{Course Instructor: Noel T. Fortun}
+\newcommand{\notes}{A.L. Maagma}
+\newcommand{\follow}{\bigskip\noindent}
+\newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\mins}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
+
+% ---------------- Start Document ----------------
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+% -------------------- Header --------------------
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+    \textbf{\class} && \textbf{Date: \datewritten} \\
+    \textbf{\instructor} && \textbf{Notes: \notes} \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+% --------------------- Body ---------------------
+
+\section{Derivatives of Logarithmic Functions}
+
+    \begin{enumerate}
+        \item Find the differential of the given function.    
+        \numbers{
+            \item \inline{h (x) = \ln{\sqrt{4 + 5x}}}
+            \item \inline{f (x) = \ln{{(3x + 1)}^2}}
+            \item \inline{g (x) = \ln^2{(3x + 1)}}
+            \item \inline{F (x) = \ln{(\sin{5x})}}
+            \item \inline{f (x) = \cos{(\ln{x})}}
+            \item \inline{f (x) = x \ln{x}}
+            \item \inline{f (x) = \ln{[{(5x \mins{} 3)}^4 {(2x^2 + 7)}^3]}}
+            \item \inline{h (x) = \frac{x}{\ln{x}}}
+            \item \inline{g (x) = \ln{\sqrt[3]{\frac{x + 1}{x^2 + 1}}}}
+            \item \inline{h (x) = \frac{\log{x}}{x}}
+            \item \inline{f (x) = \log{\left(\frac{x}{x + 1}\right)}}
+            \item \inline{f (x) = \sqrt{\log_{a} x}}
+        }
+        
+        \item Find the \inline{\frac{dy}{dx}} of the given equations by implicit differentiation.
+        \numbers{
+            \item \inline{\ln{xy} + x + y = 2}
+            \item \inline{x = \ln{(x + y + 1)}}
+            \item \inline{x + \ln{x^2 y} + 3y^2 = 2x^2 \mins{} 1}
+        }
+
+        \item Find the \inline{\frac{dy}{dx}} of the given equation by logarithmic differentiation.
+        \numbers{
+            \item \inline{y = (5x \mins{} 4) (x^2 + 3) (3x^3 \mins{} 5)}
+            \item \inline{y = \frac{x^2 {(x \mins{} 1)}^2 {(x + 2)}^3}{{(x \mins{} 4)}^5}}
+            \item \inline{y = \frac{x^3 + 2x}{\sqrt[5]{x^7 + 1}}}
+            \item \inline{y = x^{\sqrt{x}}}
+            \item \inline{y = {(\sin{x})}^{\tan{x}}}
+            \item \inline{y = x^{\ln{x}}}
+        }
+    \end{enumerate}
+
+\newpage\section*{Answer Key}
+
+    \begin{enumerate}
+        \item Find the differential of the given function.    
+        \numbers{
+            \item \inline{h (x) = \ln{\sqrt{4 + 5x}}}
+            \proving{
+                &= \ln{{(4 + 5x)}^{1/2}} \\
+                &= \frac{1}{2} \ln{(4 + 5x)} \\
+                &= \frac{1}{2} \point{} \frac{5}{(4 + 5x)} \\
+                &= \frac{5}{(8 + 10x)}
+            }
+
+            \item \inline{f (x) = \ln{{(3x + 1)}^2}}
+            \proving{
+                &= 2 \ln{(3x + 1)} \\
+                &= 2 \point{} \frac{3}{(3x + 1)} \\
+                &= \frac{6}{(3x + 1)}
+            }
+
+            \item \inline{g (x) = \ln^2{(3x + 1)}}
+
+            \item \inline{F (x) = \ln{(\sin{5x})}}
+            \proving{
+                &= \frac{5 \cos{5x}}{\sin{5x}} \\
+                &= 5 \cot{5x}
+            }
+
+            \item \inline{f (x) = \cos{(\ln{x})}}
+            \proving{
+                &= \mins{} \frac{\sin{(\ln{x})}}{x}
+            }
+
+            \item \inline{f (x) = x \ln{x}}
+            \proving{
+                &= x \point{} \frac{1}{x} + 1 \point{} \ln{x} \\
+                &= 1 + \ln{x}
+            }
+
+            \newpage\item \inline{f (x) = \ln{[{(5x \mins{} 3)}^4 {(2x^2 + 7)}^3]}}
+            \proving{
+                &= \ln{{(5x \mins{} 3)}^4} + \ln{{(2x^2 + 7)}^3} \\
+                &= 4 \ln{(5x \mins{} 3)} + 3 \ln{(2x^2 + 7)} \\
+                &= 4 \point{} \frac{5}{5x \mins{} 3} + 3 \point{} \frac{4x}{2x^2 + 7} \\
+                &= \frac{20}{5x \mins{} 3} + \frac{12x}{2x^2 + 7}
+            }
+
+            \item \inline{h (x) = \frac{x}{\ln{x}}}
+            \item \inline{g (x) = \ln{\sqrt[3]{\frac{x + 1}{x^2 + 1}}}}
+            \item \inline{h (x) = \frac{\log{x}}{x}}
+            \item \inline{f (x) = \log{\left(\frac{x}{x + 1}\right)}}
+            \item \inline{f (x) = \sqrt{\log_{a} x}}
+        }
+
+        \item Find the \inline{\frac{dy}{dx}} of the given equations by implicit differentiation.
+        \numbers{
+            \item \inline{\ln{xy} + x + y = 2}
+            \proving{
+                \frac{1}{xy} \point{} \frac{dy}{dx}\left[xy\right] + 1 + \frac{dy}{dx} &= 0 \\
+                \frac{x \point{} \frac{dy}{dx} + 1 \point{} y}{xy} + 1 + \frac{dy}{dx} &= 0 \\
+                \frac{x \frac{dy}{dx} + y}{xy} + 1 + \frac{dy}{dx} &= 0 \\
+                x \frac{dy}{dx} + y + xy + xy \frac{dy}{dx} &= 0 \\
+                x \frac{dy}{dx} + xy \frac{dy}{dx} &= \mins{} y \mins{} xy \\
+                \frac{dy}{dx} [x + xy] &= \mins{} y \mins{} xy \\
+                \frac{dy}{dx} &= \frac{\mins{} y \mins{} xy}{x + xy}
+            }
+
+            \item \inline{x = \ln{(x + y + 1)}}
+            \proving{
+                1 &= \frac{1}{x + y + 1} \point{} \frac{dy}{dx}[x + y + 1] \\
+                1 &= \frac{1}{x + y + 1} \left[1 + \frac{dy}{dx}\right] \\
+                x + y + 1 &= 1 + \frac{dy}{dx} \\
+                \frac{dy}{dx} &= x + y
+            }
+
+            \item \inline{x + \ln{x^2 y} + 3y^2 = 2x^2 \mins{} 1}
+        }
+
+        \item Find the \inline{\frac{dy}{dx}} of the given equation by logarithmic differentiation.
+        \numbers{
+            \item \inline{y = (5x \mins{} 4) (x^2 + 3) (3x^3 \mins{} 5)}
+            \proving{
+                \ln{(y)} &= \ln{(5x \mins{} 4)} + \ln{(x^2 + 3)} + \ln{(3x^3 \mins{} 5)} \\
+                \frac{1}{y} \frac{dy}{dx} &= \frac{5}{5x \mins{} 4} + \frac{2x}{x^2 + 3} + \frac{9x^2}{3x^3 \mins{} 5} \\
+                \frac{dy}{dx} &= y \left[\frac{5}{5x \mins{} 4} + \frac{2x}{x^2 + 3} + \frac{9x^2}{3x^3 \mins{} 5}\right] \\
+                \frac{dy}{dx} &= (5x \mins{} 4) (x^2 + 3) (3x^3 \mins{} 5) \left[\frac{5}{5x \mins{} 4} + \frac{2x}{x^2 + 3} + \frac{9x^2}{3x^3 \mins{} 5}\right]
+            }
+
+            \item \inline{y = \frac{x^2 {(x \mins{} 1)}^2 {(x + 2)}^3}{{(x \mins{} 4)}^5}}
+            \proving{
+                y &= (x^2) + {(x \mins{} 1)}^2 + {(x + 2)}^3 \mins{} {(x \mins{} 4)}^5 \\
+                \ln{(y)} &= 2 \ln{(x)} + 2 \ln{(x \mins{} 1)} + 3 \ln{(x + 2)} \mins{} 5 \ln{(x \mins{} 4)} \\
+                \frac{1}{y} \frac{dy}{dx} &= \frac{2}{x} + \frac{2}{x \mins{} 1} + \frac{3}{x + 2} \mins{} \frac{5}{x \mins{} 4} \\
+                \frac{dy}{dx} &= y \left[\frac{2}{x} + \frac{2}{x \mins{} 1} + \frac{3}{x + 2} \mins{} \frac{5}{x \mins{} 4}\right] \\
+                \frac{dy}{dx} &= \frac{x^2 {(x \mins{} 1)}^2 {(x + 2)}^3}{{(x \mins{} 4)}^5} \left[\frac{2}{x} + \frac{2}{x \mins{} 1} + \frac{3}{x + 2} \mins{} \frac{5}{x \mins{} 4}\right]
+            }
+
+            \item \inline{y = \frac{x^3 + 2x}{\sqrt[5]{x^7 + 1}}}
+            \proving{
+                y &= (x^3 + 2x) \mins{} {(x^7 + 1)}^{\frac{1}{5}} \\
+                \ln{(y)} &= \ln{(x^3 + 2x)} \mins{} \frac{1}{5} \ln{(x^7 + 1)} \\
+                \frac{1}{y} \frac{dy}{dx} &= \frac{3x^2 + 2}{x^3 + 2x} \mins{} \frac{7x^6}{5(x^7 + 1)} \\
+                \frac{dy}{dx} &= y \left[\frac{3x^2 + 2}{x^3 + 2x} \mins{} \frac{7x^6}{5(x^7 + 1)}\right] \\
+                \frac{dy}{dx} &= \frac{x^3 + 2x}{\sqrt[5]{x^7 + 1}} \left[\frac{3x^2 + 2}{x^3 + 2x} \mins{} \frac{7x^6}{5(x^7 + 1)}\right]
+            }
+
+            \newpage\item \inline{y = x^{\sqrt{x}}}
+            \proving{
+                \ln{(y)} &= \sqrt{x} \ln{(x)} \\
+                \frac{1}{y} \frac{dy}{dx} &= \sqrt{x} \point{} \frac{1}{x} + \frac{1}{2} x^{\mins{} \frac{1}{2}} \point{} \ln{(x)} \\
+                \frac{1}{y} \frac{dy}{dx} &= \frac{\sqrt{x}}{x} + \frac{\ln{(x)}}{2x^{\frac{1}{2}}} \\
+                \frac{1}{y} \frac{dy}{dx} &= \frac{1}{\sqrt{x}} + \frac{\ln{(x)}}{2 \sqrt{x}} \\
+                \frac{1}{y} \frac{dy}{dx} &= \frac{2 + \ln{(x)}}{2 \sqrt{x}} \\
+                \frac{dy}{dx} &= y \left[\frac{2 + \ln{(x)}}{2 \sqrt{x}}\right] \\
+                \frac{dy}{dx} &= x^{\sqrt{x}} \left[\frac{2 + \ln{(x)}}{2 \sqrt{x}}\right]
+            }
+
+            \item \inline{y = {(\sin{x})}^{\tan{x}}}
+            \item \inline{y = x^{\ln{x}}}
+        }
+    \end{enumerate}
+
+\newpage\section{Natural Logs and Exponentials}
+
+    \begin{enumerate}
+        \item Find the differentiation of each function with respect to \textit{x}.
+        \numbers{
+            \item \inline{y = \ln{x^3}}
+            \item \inline{y = e^{2x^3}}
+            \item \inline{y = \ln{\ln{2x^4}}}
+            \item \inline{y = \ln{\ln{3x^3}}}
+            \item \inline{y = \cos{\ln{4x^3}}}
+            \item \inline{y = e^{e^{3x^2}}}
+            \item \inline{y = e^{{(4x^3 + 5)}^2}}
+            \item \inline{y = \ln{4x^2} \point{} (\mins{} x^3 \mins{} 4)}
+            \item \inline{y = \ln{{\left(\mins{} \frac{4x^4}{x^3 \mins{} 3}\right)}^5}}
+            \item \inline{y = \frac{e^{5x^4}}{e^{4x^2 + 3}}}
+        }
+    \end{enumerate}
+
+\newpage\section*{Answer Key}
+
+    \begin{enumerate}
+        \item Find the differentiation of each function with respect to \textit{x}.
+        \numbers{
+            \item \inline{y = \ln{x^3}}
+            \proving{
+                y &= 3 \ln{(x)} \\
+                \frac{dy}{dx} &= \frac{3}{x}
+            }
+
+            \item \inline{y = e^{2x^3}}
+            \item \inline{y = \ln{\ln{2x^4}}}
+            \item \inline{y = \ln{\ln{3x^3}}}
+            \item \inline{y = \cos{\ln{4x^3}}}
+            \item \inline{y = e^{e^{3x^2}}}
+            \item \inline{y = e^{{(4x^3 + 5)}^2}}
+            \item \inline{y = \ln{4x^2} \point{} (\mins{} x^3 \mins{} 4)}
+            \item \inline{y = \ln{{\left(\mins{} \frac{4x^4}{x^3 \mins{} 3}\right)}^5}}
+            \item \inline{y = \frac{e^{5x^4}}{e^{4x^2 + 3}}}
+        }
+    \end{enumerate}
+
+\newpage\section{Logs and Exponentials}
+
+    \begin{enumerate}
+        \item Find the differentiation of each function with respect to \textit{x}.
+        \numbers{
+            \item \inline{y = 4^{4x^4}}
+            \item \inline{y = 4^{\mins{} 5x^3}}
+            \item \inline{y = \log_3{3x^2}}
+            \item \inline{y = \log_2{4x^2}}
+            \item \inline{y = \log_3{{(3x^5 + 5)}^5}}
+            \item \inline{y = \log_5{{(\mins{} 5x^3 \mins{} 2)}^3}}
+            \item \inline{y = {(4^{x^3} + 2)}^3}
+            \item \inline{y = 3^{{(x^4 + 1)}^3}}
+            \item \inline{y = 3^{\cos{3x^4}}}
+            \item \inline{y = \log_5{\tan{4x^4}}}
+        }
+    \end{enumerate}
+
+\end{document}
