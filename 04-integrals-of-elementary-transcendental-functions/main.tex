@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor, color, soul}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+
+\graphicspath{ {./images/} }
+\sethlcolor{yellow}
+
+\newcommand{\class}{Integrals of Elementary Transcendental Functions}
+\newcommand{\datewritten}{Term 1, Fall '23}
+\newcommand{\instructor}{Course Instructor: Noel T. Fortun}
+\newcommand{\notes}{A.L. Maagma}
+\newcommand{\follow}{\bigskip\noindent}
+\newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\mins}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
+
+% ---------------- Start Document ----------------
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+% -------------------- Header --------------------
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+    \textbf{\class} && \textbf{Date: \datewritten} \\
+    \textbf{\instructor} && \textbf{Notes: \notes} \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+% --------------------- Body ---------------------
+
+\section{Integrals Yielding the Natural Logarithmic Function}
+
+    \enclose{
+        \textbf{DEFINITION.}
+        Since the natural logarithm is undefined for negative numbers, you will often encounter expressions of the form \inline{\ln{|u|}}.
+        Hence, for derivatives involving absolute values, if \textit{u} is a differentiable function of \textit{x} such that \inline{u \neq{} 0}, then \block{\frac{d}{dx} [\ln{|u|}] = \frac{u'}{u}}
+    }
+
+    \follow\textbf{EXAMPLE 1.0.0.} Evaluate the equation \inline{\int{} \frac{1}{u} du}.
+    \proving{
+        &= \ln{|u|} + C
+    }
+
+    \follow\enclose{
+        \textbf{DEFINITION.}
+        For any rational number \inline{n \neq{} \mins{} 1}, \block{\int{} u^n \, du = \frac{u^{n + 1}}{n + 1} + C}
+        However, for any rational number \inline{n = \mins{} 1}, \block{\int{} u^n \, du = \ln{|u|} + C}
+    }
+
+    \follow\textbf{EXAMPLE 1.0.1.} Evaluate the equation \inline{\int{} \frac{2}{x} \, dx}.
+
+    \follow\textbf{EXAMPLE 1.0.2.} Evaluate the equation \inline{\int{} \frac{dx}{4x \mins{} 1}}.
+
+    \follow\textbf{EXAMPLE 1.0.3.} Find the area of the region on the \textit{x}-axis and the line \inline{x = 3}, bounded by the graph of \block{y = \frac{x}{x^2 + 1}}
+
+    \follow\textbf{EXAMPLE 1.0.4.} Evaluate the equation \inline{\int{} \frac{x + 1}{x^2 + 2x} \, dx}.
+
+    \follow\textbf{EXAMPLE 1.0.5.} Evaluate the equation \inline{\int{} \frac{\sec^2{x}}{\tan{x}} \, dx}.
+
+    \follow\textbf{EXAMPLE 1.0.6.} Evaluate the equation \inline{\int{} \frac{\ln{x}}{x} \, dx}.
+
+    \follow\textbf{NOTE.}
+    The integrals to which this formula or rules can be applied may appear in disguised form.
+    For instance, when a \hl{rational function has a numerator of degree greater than or equal to that of the denominator}, division may reveal a form to which you can apply the rule.
+
+    \follow\textbf{EXAMPLE 1.0.7.} Evaluate the equation \inline{\int{} \frac{x^2 + x + 1}{x^2 + 1} \, dx}.
+
+    \follow\textbf{EXAMPLE 1.0.8.} Evaluate the equation \inline{\int_{0}^{2} \frac{x^2 + 2}{x + 1} \, dx}.
+
+\section{Integrals Involving Logarithmic Functions}
+
+    \follow\textbf{EXAMPLE 2.0.1.} Evaluate the equation \inline{\int{} \frac{\log_{10} x}{x}}.
+
+    \follow\textbf{EXAMPLE 2.0.2.} Evaluate the equation \inline{\int{} \frac{{(\log_{3} x)}^2}{x}}.
+
+\section{Integral of Trigonometric Functions}
+
+    \follow\textbf{EXAMPLE 3.0.1.} Evaluate the equation \inline{\int{} \tan{x} \, dx}.
+    \proving{
+        &= \mins{} \int{} \frac{\mins{} \sin{x}}{\cos{x}} \, dx     & u &= \cos{x}                  \\
+        &= \mins{} \int{} \frac{du}{u}                              & du &= \mins{} \sin{x} \, dx   \\
+        &= \mins{} \ln{|u|} + C \\
+        &= \mins{} \ln{|\cos{x}|} + C \\
+        &= \ln{|{(\cos{x})}^{\mins{} 1}|} + C \\
+        &= \ln{|\sec{x}|} + C
+    }
+
+    \follow\textbf{EXAMPLE 3.0.2.} Evaluate the equation \inline{\int{} \cot{x} \, dx}.
+    \proving{
+        &= \int{} \frac{\cos{x}}{\sin{x}} \, dx     & u &= \sin{x} \\
+        &= \int{} \frac{du}{u}                      & du &= \cos{x} \, dx \\
+        &= \ln{|u|} + C \\
+        &= \ln{|\sin{x}|} + C
+    }
+
+    
+
+\end{document}

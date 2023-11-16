@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor, color, soul}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+
+\graphicspath{ {./images/} }
+\sethlcolor{yellow}
+
+\newcommand{\class}{Derivatives of Elementary Transcendental Functions}
+\newcommand{\datewritten}{Term 1, Fall '23}
+\newcommand{\instructor}{Course Instructor: Noel T. Fortun}
+\newcommand{\notes}{A.L. Maagma}
+\newcommand{\follow}{\bigskip\noindent}
+\newcommand{\spaces}{\quad\quad\quad}
+\newcommand{\spacee}{\quad}
+\newcommand{\point}{\,\cdot\,}
+
+\newcommand{\mins}{-}
+\newcommand{\block}[1]{\[{#1}\]}
+\newcommand{\inline}[1]{\({#1}\)}
+\newcommand{\proving}[1]{\begin{align*}{#1}\end{align*}}
+\newcommand{\numbers}[1]{\begin{enumerate}[label*=\arabic*.]{#1}\end{enumerate}}
+\newcommand{\enclose}[1]{\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{{#1}}}}
+
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace*{\belowdisplayskip}}
+
+% ---------------- Start Document ----------------
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+% -------------------- Header --------------------
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+    \textbf{\class} && \textbf{Date: \datewritten} \\
+    \textbf{\instructor} && \textbf{Notes: \notes} \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+% --------------------- Body ---------------------
+\noindent\section{Integration by Parts}
+
+    \follow\textbf{EXAMPLE 1.0.1.}
+    % \proving{
+    %     \int{} x e^x \, dx &= 
+    % }
+
+    \follow\textbf{EXAMPLE 1.0.2.}
+    \proving{
+        \int{} x \ln(x) \, dx &=            & u &= \ln(x)           & dv &= x \, dx \\
+        &= uv \mins{} \int{} v \, du        & du &= \frac{dx}{x}    & v &= \frac{x^2}{2} \\
+        &= (\ln(x)) (\frac{x^2}{2}) \mins{} \int{} \frac{x^2}{2} \frac{dx}{x} \\
+        &= \frac{x^2 \ln(x)}{2} \mins{} \frac{1}{2} \int{} x \, dx \\
+        &= \frac{x^2 \ln(x)}{2} \mins{} \frac{1}{2} \point{} \frac{x^2}{2} + C \\
+        &= \frac{x^2 \ln(x)}{2} \mins{} \frac{x^2}{4} + C
+    }
+
+    \follow\textbf{EXAMPLE 1.0.3.}
+    \proving{
+        \int{} x \sec(x) \tan(x) \, dx &= x \sec(x) \mins{} \int{} \sec(x) \, dx    & u &= x        & dv &= \sec(x) \tan(x) \, dx \\
+        &= x \sec(x) \mins{} \ln{|\sec(x) + \tan(x)|} + C                           & du &= dx      & v &= \sec(x) \\
+    }
+
+    \follow\textbf{EXAMPLE 1.0.3.}
+    \proving{
+        \int{} \ln(x) \, dx &= x \ln(x) \mins{} \int{} x \frac{dx}{x}   & u &= \ln(x)           & dv &= dx \\
+        &= x \ln(x) \mins{} x + C                                       & du &= \frac{dx}{x}    & v &= x
+    }
+
+    \follow\textbf{EXAMPLE 1.0.4.}
+    \proving{
+        \int{} x \cos(x) \, dx &= uv \mins{} \int{} v du    & u &= x        & dv &= \cos(x) \, dx \\
+        &= x \sin(x) \mins{} \int{} \sin(x) dx              & du &= dx      & v &= \sin(x) \\
+        &= x \sin(x) + \cos(x) + C
+    }
+
+    \follow\textbf{EXAMPLE 1.0.5.}
+    \proving{
+        \int{} \sin(x) \ln(\cos(x)) \, dx &= \mins{} \cos(x) \ln(\cos(x)) + \cos(x) + C       & u &= \ln(\cos(x))          & dv &= x
+    }
+
+    \follow\textbf{EXAMPLE 1.0.6.}
+    \proving{
+        \int_{1}^{2} \frac{\ln(x)}{x^2} \, dx &= \int_{1}^{2} \ln(x) \, x^{\mins{} 2} \, dx                                 & u &= \ln(x)           & dv &= x^{\mins{} 2} \, dx \\
+        &= {\left[(\ln(x)) (\mins{} x^{\mins{} 1})\right]}_{1}^{2} \mins{} \int_{1}^{2} \mins{} x^{\mins{} 1} \frac{dx}{x}  & du &= \frac{dx}{x}    & v &= \mins{} x^{\mins{} 1} \\
+        &= \mins{} \left[\frac{\ln(x)}{x}\right]_{1}^{2} + \int_{1}^{2} x^{-2} \, dx \\
+        &= {\left[\mins{} \frac{\ln(x)}{x} + \frac{x^{-1}}{-1}\right]}^{2}_{1} \\
+        &= {\left[\frac{\mins{} \ln(x) \mins{} 1}{x}\right]}^{2}_{1} \\
+        &= \frac{\mins{} \ln(2) \mins{} 1}{2} \mins{} \frac{-1}{1} \\
+        &= \frac{\mins{} \ln(2) \mins{} 1}{2} + 1 \\
+        &= \frac{\mins{} \ln(2) + 1}{2}
+    }
+
+    \follow\textbf{EXAMPLE 1.0.7.}
+    \proving{
+        \int{} x^2 e^x \, dx &= x^2 e^x \mins{} \int{} e^x (2x dx)      &= u &= x^2             & dv &= e^x \, dx \\
+        &= x^2 e^x \mins{} 2 \int{} x e^x \, dx                         & du &= 2x \, dx        & v &= e^x \\
+    }
+
+    \follow\textbf{EXAMPLE 1.0.8.}
+    \proving{
+        \int{} e^x \sin(x) \, dx &= e^x \sin(x) \mins{} \int{} e^x \cos(x) \, dx    & u &= \sin(x)      & dv &= e^x \, dx \\
+        &= & du_1 &= \cos(x) \, dx      & v_1 &= e^x
+    }
+
+    \newpage\follow\textbf{EXAMPLE 1.0.9.}
+    \proving{
+        \int{} e^x \cos(x) \, dx &= e^x \cos(x) \mins{} \int{} e^x (\mins{} \sin(x) \, dx)      & u_1 &= \cos(x)                        & dv_1 &= e^x \, dx \\
+                                                                                                && du_1 &= \mins{} \sin(x) \, dx        & v_1 &= e^x \\
+        &= e^x \cos(x) + \int{} e^x \sin(x) \, dx                                               & u_2 &= \sin(x)                        & dv_2 &= e^x \, dx \\
+                                                                                                && du_2 &= \cos(x)                      & v_2 &= e^x \\
+        &= e^x \cos(x) + (e^x \sin(x) \mins{} \int{} e^x (\cos(x))) \\
+        e^x \cos(x) \, dx &= e^x \cos(x) + e^x \sin(x) \mins{} \int{} e^x \cos(x) \\
+        \frac{2 \int{} e^x \cos(x) \, dx}{2} &= \frac{e^x \cos(x) + e^x \sin(x)}{2} + C \\
+        \int{} e^x \cos(x) \, dx &= \frac{e^x \cos(x) + e^x \sin(x)}{2} + C
+    }
+
+\end{document}
